@@ -1,0 +1,2 @@
+# JSPlayz
+JSPlayz is a growing collection of fun, beginner-friendly JavaScript projects and micro-tutorials. From guessing games to to-do lists, each mini app is built to sharpen your skills, one playful line at a time.  🎮 Try. 💡 Learn. 🔁 Repeat.  Whether you’re a new dev or just revisiting the basics, this is your playground.  🧠 Focus: Vanilla JS, DOM, APIs, Logic Building 💾 All projects in one place — open source, organized, and interactive.
