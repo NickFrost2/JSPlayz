@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Quessing Game</title>
+</head>
+<body>
+    <h1>Number Quesing game</h1>
+    <label for="userGuess">Enter Number</label>
+    <input type="number" id="userGuess">
+    <button type="submit">Guess</button>
+    <p id="display">0</p>
+
+    <script>
+        const min = 1;
+        const max = 100;
+        const answer = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        let running = true;
+        let attempts = 0;
+        let guess;
+
+        function updateDisplay() {
+            document.getElementById('display').textContent;
+        }        
+
+        while(running) {
+            guess = parseInt(document.getElementById('userGuess'), 10);
+        }
+
+    </script>
+
+</body>
+</html>

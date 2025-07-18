@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        div {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="number"],
+        button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #display {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Random Number Generator</h1>
+        Min: <input type="number" id="min" value="1" placeholder="Min value"> <br>
+        Max: <input type="number" id="max" value="100" placeholder="Max value"> <br>
+        <button id="button">Generate Random Number</button>
+        <p id="display">0</p>
+        <p id="error" class="error-message"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('button');
+            const display = document.getElementById('display');
+            const minInput = document.getElementById('min'); // Get reference to the min input field
+            const maxInput = document.getElementById('max'); // Get reference to the max input field
+            const errorMessage = document.getElementById('error');
+
+            button.addEventListener('click', (e) => {
+                // Read current values from input fields *inside* the click handler
+                let min = parseInt(minInput.value, 10);
+                let max = parseInt(maxInput.value, 10);
+
+                // --- Input Validation (Crucial!) ---
+                if (isNaN(min) || isNaN(max)) {
+                    errorMessage.textContent = "Please enter valid numbers for both Min and Max.";
+                    display.textContent = 'N/A'; // Clear display or show error
+                    display.style.color = '#ccc';
+                    return; // Stop the function here
+                }
+
+                if (min >= max) {
+                    errorMessage.textContent = "Max value must be greater than Min value.";
+                    display.textContent = 'N/A';
+                    display.style.color = '#ccc';
+                    return;
+                }
+
+                // Clear any previous error messages
+                errorMessage.textContent = '';
+                display.style.color = '#333';
+
+                // Calculate random integer between min (inclusive) and max (inclusive)
+                // Formula: Math.floor(Math.random() * (max - min + 1)) + min
+                // You used Math.ceil(Math.random() * (max - min) + min)
+                // Let's analyze your formula vs the common one:
+                // Your formula: Math.ceil(Math.random() * (max - min) + min)
+                // - If Math.random() is 0.0, result is Math.ceil(0 + min) = min
+                // - If Math.random() is 0.999..., result is Math.ceil((max - min) * 0.999... + min)
+                //   This will give you max if max-min is an integer.
+                // It generally works for integer ranges, but the `+1` with `Math.floor` is more standard.
+                // Let's stick to the common and most reliable formula for inclusive integers.
+                const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+                // Update the display
+                display.textContent = randomNumber;
+            });
+        });
+    </script>
+</body>
+
+</html>

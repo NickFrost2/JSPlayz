@@ -7,7 +7,7 @@
     <title>Simple Counter</title>
 
     <link rel="stylesheet" href="counter.css">
-</head>
+</head>S
 
 <body>
 
@@ -25,29 +25,52 @@
 
 
     <script>
-        const countDisplay = document.getElementById('count');
+        let increase = document.getElementById('increment');
+        let decrease = document.getElementById('decrement');
+        let reset = document.getElementById('reset');
         let count = 0;
 
-        document.getElementById('increment').addEventListener('click', () => {
+        increase.addEventListener('click', () => {
             count++;
-            updateDisplay();
+            document.getElementById('count').textContent = count;
         });
 
-        document.getElementById('decrement').addEventListener('click', () => {
+        decrease.addEventListener('click', () => {
             count--;
-            updateDisplay();
+            document.getElementById('count').textContent = count;
         });
 
-        document.getElementById('reset').addEventListener('click', () => {
+        reset.addEventListener('click', () => {
             count = 0;
-            updateDisplay();
+            document.getElementById('count').textContent = count;
         });
 
-        function updateDisplay() {
-            countDisplay.textContent = count;
-        }
     </script>
 
+    <!-- This can also work -->
+    <!-- <script>
+            const countDisplay = document.getElementById('count');
+            let count = 0;
+
+            document.getElementById('increment').addEventListener('click', () => {
+                count++;
+                updateDisplay();
+            });
+
+            document.getElementById('decrement').addEventListener('click', () => {
+                count--;
+                updateDisplay();
+            });
+
+            document.getElementById('reset').addEventListener('click', () => {
+                count = 0;
+                updateDisplay();
+            });
+
+            function updateDisplay() {
+                countDisplay.textContent = count;
+            }
+        </script> -->
 </body>
 
 </html>

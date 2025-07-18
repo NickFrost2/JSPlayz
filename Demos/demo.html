@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>demo</title>
+</head>
+
+<body>
+   <h1 id="myh1">demo</h1>
+   <label for="demo">demo</label>
+   <input type="text" id="demo" placeholder="insert something">
+   <input type="submit" value="submit" id="mySubmit">
+
+   <script>
+      let username = window.prompt("Enter your user name")
+      username = username.trim().charAt(0).toUpperCase() + username.slice(1).toLowerCase();
+      document.getElementById('myh1').textContent = username;
+
+   </script>
+</body>
+
+</html>
