@@ -1,90 +1,90 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
 }
 
 body {
-    font-family: 'Courier New', monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #00D4FF 0%, #001014 100%);
+   font-family: 'Courier New', monospace;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background: linear-gradient(135deg, #00D4FF 0%, #001014 100%);
 }
 
 main {
-    text-align: center;
-    background: white;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    min-width: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+   text-align: center;
+   background: white;
+   padding: 25px;
+   border-radius: 16px;
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+   width: 400px;
+   min-width: fit-content;
+   display: flex;
+   flex-direction: column;
+   gap: 25px;
 }
 
 h1 {
-    font-size: 2em;
+   font-size: 2em;
 }
 
 .counter-display {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8f9fa;
-    border-radius: 8px;
-    border: 3px solid #e9ecef;
+   font-size: 3rem;
+   font-weight: bold;
+   color: #333;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #f8f9fa;
+   border-radius: 8px;
+   border: 3px solid #e9ecef;
 }
 
 .controls {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
+   display: flex;
+   gap: 15px;
+   justify-content: center;
+   flex-wrap: wrap;
 }
 
 button {
-    padding: 12px 24px;
-    font-size: 1.1em;
-    cursor: pointer;
-    border-radius: 8px;
-    outline: 0;
-    border: none;
-    color: white;
-    transition: all 0.3s ease-in-out, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   padding: 12px 24px;
+   font-size: 1.1em;
+   cursor: pointer;
+   border-radius: 8px;
+   outline: 0;
+   border: none;
+   color: white;
+   transition: all 0.3s ease-in-out, transform 0.2s ease;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-    &:hover {
-        transform: translateY(-2px);
-    }
+   &:hover {
+      transform: translateY(-2px);
+   }
 }
 
 #increment {
-    background: linear-gradient(135deg, #00D4FF 0%, #00BFFF 100%);
+   background: linear-gradient(135deg, #00D4FF 0%, #00BFFF 100%);
 
-    &:hover {
-        background: linear-gradient(135deg, #00BFFF 0%, #001014 100%);
-    }
+   &:hover {
+      background: linear-gradient(135deg, #00BFFF 0%, #001014 100%);
+   }
 }
 
 #decrement {
-    background: linear-gradient(135deg, #FF6B6B 0%, #FF4C4C 100%);
+   background: linear-gradient(135deg, #FF6B6B 0%, #FF4C4C 100%);
 
-    &:hover {
-        background: linear-gradient(135deg, #FF4C4C 0%, #001014 100%);
-    }
+   &:hover {
+      background: linear-gradient(135deg, #FF4C4C 0%, #001014 100%);
+   }
 }
 
 #reset {
-    background: linear-gradient(135deg, #FFDD59 0%, #FFB400 100%);
+   background: linear-gradient(135deg, #FFDD59 0%, #FFB400 100%);
 
-    &:hover {
-        background: linear-gradient(135deg, #FFB400 0%, #001014 100%);
-    }
+   &:hover {
+      background: linear-gradient(135deg, #FFB400 0%, #001014 100%);
+   }
 }

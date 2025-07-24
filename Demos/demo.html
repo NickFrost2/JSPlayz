@@ -14,10 +14,31 @@
    <input type="submit" value="submit" id="mySubmit">
 
    <script>
-      let username = window.prompt("Enter your user name")
-      username = username.trim().charAt(0).toUpperCase() + username.slice(1).toLowerCase();
-      document.getElementById('myh1').textContent = username;
+      
+      function sum(...numbers) {
+         let result = 0;
+         for(let number of numbers) {
+            result += number;
+         }
+         return result;
+      }
 
+      function average(...num) {
+         let answer = 0;
+         for (let no of num){
+            answer += no;
+         }
+         return answer / num.length;
+      }
+
+      const toSum = [1, 2, 3, 4];
+      const getAverage = [20, 30, 10, 10];
+
+      const gettingAverage = sum(...toSum);
+      const summing = average(...getAverage);
+
+      document.getElementById('myh1').textContent = `the average of ${getAverage.join(", ")} is ${gettingAverage} while the sum of ${toSum.join(", ")} is ${summing}`;
+      
    </script>
 </body>
 
