@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Dice Roller</title>
+   <link rel="stylesheet" href="dice.css">
 </head>
-<style>
-   img {
-      width: 60px;
-      height: 60px;
-   }
-</style>
+
 <body>
-   <div>
+   <main>
       <h1>Dice roller</h1>
-      <label for="userInput"> No of dice to roll:</label>
+      <br>
+      <p>No of dice to roll 🔻 </p>
       <input type="number" name="times" value="1" max="6" id="userInput">
-      <button role="button" type="button" onclick="rollDice()">Roll Dice</button>
+
+      <button id="button" role="button" type="button" onclick="rollDice()">Roll Dice</button>
       <br>
-      <div id="diceResult"></div>
-      <br>
-      <div id="diceImages"></div>
-   </div>
+      <div id="diceResult">Dice: ?</div>
+      <div id="diceImages">
+         <img src="ok.png" alt="">
+      </div>
+   </main>
 
 
    <script src="file.js">

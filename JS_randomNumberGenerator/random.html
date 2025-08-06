@@ -5,21 +5,22 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Random Number Generator</title>
+   <link rel="stylesheet" href="random1.css">
 </head>
 
 <body>
-   <div>
-      <h2>Random Number Generator </h2>
-      <label for="min">min:</label>
-      <input type="number" value="1" id="min" required>
-      <br><br>
-      <label for="max">Max:</label>
-      <input type="number" value="100" id="max" required>
-      <div>
-         <h2 id="display">0</h2>
-      </div>
+   <main>
+      <h1>Random Number Generator</h1> <br>
+
+      min:<input type="number" value="1" id="min" required> <br>
+      Max:<input type="number" value="100" id="max" required>
+      <br>
+
+      <h2 id="display">0</h2> <br>
+
+      <p id="error" class="error-message"></p>
       <button id="button" type="submit">Generate Number</button>
-   </div>
+   </main>
 
    <script src="file.js" defer>
    </script>
