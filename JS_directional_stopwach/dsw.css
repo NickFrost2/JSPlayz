@@ -1,0 +1,120 @@
+* {
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+}
+
+/* *::selection {
+   background-color: transparent;
+} */
+
+h1 {
+   text-align: center;
+}
+
+main {
+   display: grid;
+   grid-template-columns: repeat(3, 10rem);
+   grid-template-rows: repeat(3, 10rem);
+   justify-content: center;
+}
+
+main>div {
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   background: linear-gradient(145deg, #ffe600, #f1c80e);
+   flex-direction: column;
+   cursor: pointer;
+   color: black;
+   box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.3),
+      inset 0 3px 6px rgba(255, 255, 255, 0.2),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.2);
+   transition: all 0.15s ease;
+
+   &:hover {
+      filter: contrast(1.1);
+      transform: scale(1.02);
+      box-shadow:
+         0 15px 30px rgba(0, 0, 0, 0.4),
+         inset 0 3px 6px rgba(255, 255, 255, 0.2),
+         inset 0 -3px 6px rgba(0, 0, 0, 0.2);
+   }
+
+   &:active {
+      transform: scale(1);
+      box-shadow:
+         0 15px 30px rgba(0, 0, 0, 0.4),
+         inset 0 3px 6px rgba(255, 255, 255, 0.2),
+         inset 0 -3px 6px rgba(0, 0, 0, 0.2);
+   }
+}
+
+.up-btn {
+   grid-area: 1/2;
+}
+
+.lt-btn {
+   grid-area: 2/1;
+}
+
+.md-btn {
+   grid-area: 2/2;
+   border-radius: 20%;
+   z-index: 10;
+   color: white;
+   background: linear-gradient(145deg, #ff4834, #cc3220);
+}
+
+.rt-btn {
+   grid-area: 2/3;
+
+}
+
+.dw-btn {
+   grid-area: 3/2;
+}
+
+.rs-btn {
+   grid-area: 3/3;
+   height: max-content;
+   width: max-content;
+   padding: 0.6rem 2em;
+   align-self: center;
+   justify-self: center;
+   font-size: large;
+   cursor: pointer;
+   border-radius: 10px;
+   background: #34db3c;
+   color: white;
+   border: 4px solid #00f815;
+   font-weight: bold;
+   transition: all 0.1s ease;
+
+   &:hover {
+      background: #23a729;
+   }
+
+   &:active {
+      border-width: 2px;
+      padding: 0.5rem 1.9rem;
+      background: #0eb31c;
+   }
+}
+
+P {
+   font-size: 1.5rem;
+}
+
+div i {
+   font-size: 3.5rem;
+}
+
+div span {
+   font-size: 1.2rem;
+   font-family: 'Courier New', monospace;
+
+}
