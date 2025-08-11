@@ -14,20 +14,37 @@
    <h1>Directional StopWatch</h1>
    <br>
    <main>
-      <div class="up-btn arrow" role="button">
-         <i class="fas fa-angle-up"></i><span>00:00:00</span>
+      <div class="up-btn arrow" role="button" id="up-btn" onclick="upStart()">
+         <i class="fas fa-angle-up"></i>
+         <span id="up-time">00:00:00</span>
       </div>
 
-      <div class="lt-btn arrow" role="button"><i class="fas fa-angle-left"></i><span>00:00:00</span></div>
-      <div class="md-btn" role="button">
+      <div class="lt-btn arrow" role="button" id="left-btn" onclick="leftStart()">
+         <i class="fas fa-angle-left"></i>
+         <span id="left-time">00:00:00</span>
+      </div>
+
+      <div class="md-btn" role="button" id="total-btn" onclick="stopAll()">
          <p>STOP</p>
-         <span>00:00:00</span>
+         <span id="total-time">00:00:00</span>
          <p>TOTAL</p>
       </div>
-      <div class="rt-btn arrow" role="button"><i class="fas fa-angle-right"></i><span>00:00:00</span></div>
-      <div class="dw-btn arrow" role="button"><span>00:00:00</span><i class="fas fa-angle-down"></i></div>
-      <button class="rs-btn">RESET</button>
+
+      <div class="rt-btn arrow" role="button" id="right-btn" onclick="rightStart()">
+         <i class="fas fa-angle-right"></i>
+         <span id="right-time">00:00:00</span>
+      </div>
+
+      <div class="dw-btn arrow" role="button" id="down-btn" onclick="downStart()">
+         <span id="down-time">00:00:00</span>
+         <i class="fas fa-angle-down"></i>
+      </div>
+
+      <button class="rs-btn" id="reset" onclick="resetAll()">RESET</button>
+
    </main>
+
+   <script src="dsw.js"></script>
 </body>
 
 </html>

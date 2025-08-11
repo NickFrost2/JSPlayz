@@ -8,15 +8,24 @@
    background-color: transparent;
 } */
 
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background: linear-gradient(135deg, #00D4FF 0%, #001014 100%);
+}
+
 h1 {
    text-align: center;
+   color: white;
 }
 
 main {
    display: grid;
-   grid-template-columns: repeat(3, 10rem);
-   grid-template-rows: repeat(3, 10rem);
-   justify-content: center;
+   grid-template-columns: repeat(3, 11rem);
+   grid-template-rows: repeat(3, 11rem);
 }
 
 main>div {
@@ -67,6 +76,8 @@ main>div {
    z-index: 10;
    color: white;
    background: linear-gradient(145deg, #ff4834, #cc3220);
+   justify-content: center;
+   align-items: center;
 }
 
 .rt-btn {
@@ -116,5 +127,50 @@ div i {
 div span {
    font-size: 1.2rem;
    font-family: 'Courier New', monospace;
+}
 
+@media (max-width: 600px) {
+   main {
+      display: grid;
+      grid-template-columns: repeat(2, 8rem);
+      grid-template-rows: repeat(4, 8rem);
+      column-gap: 20px;
+   }
+
+   .up-btn {
+      grid-area: 1/1/2/3;
+      width: 8rem;
+      height: 8rem;
+      justify-self: center;
+   }
+
+   .lt-btn {
+      grid-area: 2/1;
+   }
+
+   .md-btn {
+      grid-area: 4/1;
+      margin: 10px;
+      padding: 10px;
+   }
+
+   .rt-btn {
+      grid-area: 2/2;
+
+   }
+
+   .dw-btn {
+      grid-area: 3/1/4/3;
+      width: 8rem;
+         height: 8rem;
+         align-self: center;
+         justify-self: center;
+   }
+
+   .rs-btn {
+      grid-area: 4/2;
+      margin: 10px;
+      padding: 0.4rem 1.5em;
+      font-weight: normal;
+   }
 }
