@@ -1,44 +1,41 @@
-let increase = document.getElementById('increment');
-let decrease = document.getElementById('decrement');
-let reset = document.getElementById('reset');
+let increaseBtn = document.getElementById('increment');
+let decreaseBtn = document.getElementById('decrement');
+let revert = document.getElementById('reset');
 let count = 0;
 
-increase.addEventListener('click', () => {
+
+function increment() {
    count++;
-   document.getElementById('count').textContent = count;
-});
+   display(count);
+}
 
-decrease.addEventListener('click', () => {
+function decrement() {
    count--;
-   document.getElementById('count').textContent = count;
-});
-
-reset.addEventListener('click', () => {
+   display(count);
+}
+function reset() {
    count = 0;
+   display(count);
+}
+
+function display(count) {
    document.getElementById('count').textContent = count;
-});
+}
+
+increaseBtn.onclick = increment;
+decreaseBtn.onclick = decrement;
+revert.onclick = reset;
 
 
-// this can also work
-/*
-const countDisplay = document.getElementById('count');
-let count = 0;
-
-document.getElementById('increment').addEventListener('click', () => {
-    count++;
-    updateDisplay();
-});
-
-document.getElementById('decrement').addEventListener('click', () => {
-    count--;
-    updateDisplay();
-});
-
-document.getElementById('reset').addEventListener('click', () => {
-    count = 0;
-    updateDisplay();
-});
-
-function updateDisplay() {
-    countDisplay.textContent = count;
-}*/
+document.addEventListener('keydown', (event) => {
+   const key = event.key;
+   if (key === 'ArrowUp' || key === 'ArrowLeft') {
+      increment()
+   }
+   else if (key === 'ArrowDown' || key === 'ArrowRight') {
+      decrement()
+   }
+   else if (key === 'Enter') {
+      reset()
+   }
+})

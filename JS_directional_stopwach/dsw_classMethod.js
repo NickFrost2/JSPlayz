@@ -116,3 +116,26 @@ const manager = new timeManager;
 })
 totalBtn.addEventListener('click', () => manager.stopAll());
 resetBtn.addEventListener('click', () => manager.resetAll());
+
+document.addEventListener("keydown", (event) => {
+   const keyName = event.key;
+
+   if (keyName === 'ArrowUp') {
+      manager.start('up')
+   }
+   else if (keyName === 'ArrowLeft') {
+      manager.start('left')
+   }
+   else if (keyName === 'ArrowRight') {
+      manager.start('right')
+   }
+   else if (keyName === 'ArrowDown') {
+      manager.start('down')
+   }
+   else if (keyName === 'Enter') {
+      manager.stopAll()
+   }
+   else if (keyName === 'Escape') {
+      manager.resetAll()
+   }
+})

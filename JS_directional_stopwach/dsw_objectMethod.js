@@ -76,3 +76,27 @@ rightBtn.onclick = () => startDirection('right');
 downBtn.onclick = () => startDirection('down');
 totalBtn.onclick = stopAll;
 resetBtn.onclick = resetAll;
+
+document.addEventListener("keydown", (event) => {
+   const keyName = event.key;
+   switch (keyName) {
+      case 'ArrowUp':
+         startDirection('up')
+         break;
+      case 'ArrowLeft':
+         startDirection('left')
+         break;
+      case 'ArrowRight':
+         startDirection('right')
+         break;
+      case 'ArrowDown':
+         startDirection('down')
+         break;
+      case 'Enter':
+         stopAll()
+         break;
+      case 'Escape':
+         resetAll()
+         break;
+   }
+})
