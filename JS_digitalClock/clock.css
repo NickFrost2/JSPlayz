@@ -1,0 +1,127 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background: linear-gradient(135deg, #00D4FF 0%, #001014 100%);
+}
+
+main {
+   justify-content: center;
+   align-items: center;
+   background: white;
+   padding: 25px;
+   border-radius: 16px;
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+   width: 350px;
+   min-width: fit-content;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.tittle {
+   font-size: 2rem;
+}
+
+.clock-display {
+   background: grey;
+   font-weight: bold;
+   color: #333;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #f8f9fa;
+   border-radius: 0.5rem;
+   border: 3px solid #e9ecef;
+   width: 100%;
+   padding: 10px 0;
+}
+
+#clock {
+   font-size: 2rem;
+}
+
+/* for toggle */
+
+.toggle-container {
+   display: flex;
+   justify-content: center;
+   width: max-content;
+}
+
+.toggle-label {
+   position: relative;
+   cursor: pointer;
+}
+
+.toggle-peer {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0, 0, 0, 0);
+   white-space: nowrap;
+   border-width: 0;
+}
+
+.toggle-div {
+   width: 45px;
+   height: 24px;
+   background-color: rgba(128, 128, 128, 0.315);
+   border-radius: 30px;
+   transition: all 300ms;
+}
+
+.toggle-peer:checked~.toggle-div {
+   background-color: #001014;
+}
+
+.toggle-peer:checked~.toggle-circle {
+   transform: translateX(21px);
+}
+
+.toggle-peer:checked~.text-pm {
+   display: inline;
+}
+
+.toggle-peer:checked~.text-am {
+   display: none;
+}
+
+.toggle-circle {
+   position: absolute;
+   left: 4px;
+   top: 3.5px;
+   width: 16px;
+   height: 16px;
+   background-color: white;
+   border-radius: 100%;
+   transition: all 300ms ease-in-out;
+}
+
+.toggle-text {
+   font-size: 0.5rem;
+   position: absolute;
+   transition: all 5s ease-in-out;
+}
+
+.text-am {
+   top: 5px;
+   left: 5px;
+}
+
+.text-pm {
+   top: 5px;
+   right: 5px;
+   display: none;
+}
