@@ -14,6 +14,31 @@ body {
    background: linear-gradient(135deg, #00D4FF 0%, #001014 100%);
 }
 
+nav {
+   width: 3rem;
+   height: 3rem;
+   background: #001014;
+   margin: 10px;
+   border-radius: 100%;
+   aspect-ratio: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   font-size: 1.5rem;
+   padding: 10px;
+   position: fixed;
+   top: 0;
+   right: 0;
+   z-index: 1000;
+   transition: all 300ms;
+
+   &:hover {
+      background: #0ea5e9;
+      /* color: #001014; */
+   }
+}
+
 form {
    justify-content: center;
    align-items: center;
@@ -29,8 +54,9 @@ form {
 }
 
 h1 {
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    margin-bottom: 15px;
+   text-align: center;
 }
 
 #display {

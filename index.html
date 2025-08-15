@@ -133,11 +133,16 @@
    <style>
       * {
          box-sizing: border-box;
+         padding: 0;
+         margin: 0;
       }
 
       body {
          background: linear-gradient(135deg, #001014 0%, #1e293b 100%);
          min-height: 100vh;
+      }
+
+      main {
          display: flex;
          flex-direction: column;
          justify-content: center;
@@ -145,9 +150,10 @@
          align-items: center;
          font-family: 'Poppins', sans-serif;
          color: #f3f4f6;
+         margin-top: 40px;
       }
 
-      a {
+      main a {
          display: inline-block;
          margin: 6px 0;
          width: 50%;
@@ -161,54 +167,89 @@
          font-weight: 500;
          box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
          transition: background 0.2s, transform 0.2s;
+
+         &:hover {
+            background: #0369a1;
+            transform: translateY(-2px) scale(1.03);
+         }
       }
 
-      a:hover {
-         background: #0369a1;
-         transform: translateY(-2px) scale(1.03);
-      }
-
-      i {
+      main i {
          margin-right: 8px;
          font-size: 1.2em;
          vertical-align: middle;
       }
 
       @media (max-width: 600px) {
-         body {
+         main {
             padding: 24px 15px;
          }
 
-         a {
+         main a {
             width: 100%;
             font-size: 1rem;
             padding: 10px 0;
             text-align: center;
          }
       }
+
+      nav {
+         width: max-content;
+         background: #001014;
+         margin: 10px;
+         border-radius: 100%;
+         aspect-ratio: 1;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: max-content;
+         color: white;
+         font-size: 1.5rem;
+         padding: 10px;
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: 1000;
+         transition: all 300ms;
+         &:hover {
+            background: #0ea5e9;
+            /* color: #001014; */
+         }
+      }
    </style>
 </head>
 
 <body>
-   <a href="JS_counter/counter.html"><i class="fa-solid fa-abacus"></i>Counter</a>
 
-   <a href="JS_stopWatch/stopWatch.html"><i class="fas fa-stopwatch"></i>StopWatch</a>
+   <a href="index.html">
+   <nav>
+      <i class="fas fa-house"></i>
+   </nav>
+   </a>
 
-   <a href="JS_directional_stopwach/dsw.html"><i class="fas fa-arrows-up-down-left-right"></i>Directional Stopwatch</a>
+   <main>
+      <a href="JS_counter/counter.html"><i class="fa-solid fa-abacus"></i>Counter</a>
 
-   <a href="JS_randomNumberGenerator/random.html"><i class="fa-regular fa-arrow-up-1-9"></i>Random Number 1</a>
+      <a href="JS_stopWatch/stopWatch.html"><i class="fas fa-stopwatch"></i>StopWatch</a>
 
-   <a href="JS_randomNumberGenerator/randomNumber2.html"><i class="fa-regular fa-arrow-up-9-1"></i>Random Number 2</a>
+      <a href="JS_directional_stopwach/dsw.html"><i class="fas fa-arrows-up-down-left-right"></i>Directional
+         Stopwatch</a>
 
-   <a href="JS_numberQuessGame/guess.html"><i class="fa-light fa-face-thinking"></i>Guess Number game</a>
+      <a href="JS_randomNumberGenerator/random.html"><i class="fa-regular fa-arrow-up-1-9"></i>Random Number</a>
 
-   <a href="JS_guessGame/guess.html"><i class="fa-light fa-face-thinking"></i>Guess Word game</a>
+      <a href="JS_numberQuessGame/guess.html"><i class="fa-light fa-face-thinking"></i>Guess Number game</a>
 
-   <a href="JS_DiceRoller/diceRoller.html"><i class="fa-solid fa-dice-six"></i>Dice Roller</a>
+      <a href="JS_guessGame/guess.html"><i class="fa-light fa-face-thinking"></i>Guess Word game</a>
 
-   <a href="JS_digitalClock/clock.html"><i class="fas fa-clock"></i>Digital Clock</a>
+      <a href="JS_DiceRoller/diceRoller.html"><i class="fa-solid fa-dice-six"></i>Dice Roller</a>
 
-   <a href="JS_TempConverter/temperatureConverter.html"><i class="fas fa-temperature-high"></i>Temperature Conveter</a>
+      <a href="JS_digitalClock/clock.html"><i class="fas fa-clock"></i>Digital Clock</a>
+
+      <a href="JS_TempConverter/temperatureConverter.html"><i class="fas fa-temperature-high"></i>Temperature
+         Converter</a>
+
+      <a href="JS_passwordGenerator/passwordGenerator.html"><i class="fas fa-key"></i>Password Generator</a>
+   </main>
 </body>
 
 </html>

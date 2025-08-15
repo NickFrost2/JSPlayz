@@ -1,17 +1,26 @@
+<!-- @format -->
+
 # JSPlayz
 
-JSPlayz is a growing collection of fun, beginner-friendly JavaScript projects and micro-tutorials. From guessing games to to-do lists, each mini app is built to sharpen your skills, one playful line at a time.  🎮 Try. 💡 Learn. 🔁 Repeat.  Whether you’re a new dev or just revisiting the basics, this is your playground.  🧠 Focus: Vanilla JS, DOM, APIs, Logic Building 💾 All projects in one place — open source, organized, and interactive.
+JSPlayz is a growing collection of fun, beginner-friendly JavaScript projects and micro-tutorials. From guessing games to to-do lists, each mini app is built to sharpen your skills, one playful line at a time. 🎮 Try. 💡 Learn. 🔁 Repeat. Whether you’re a new dev or just revisiting the basics, this is your playground. 🧠 Focus: Vanilla JS, DOM, APIs, Logic Building 💾 All projects in one place — open source, organized, and interactive.
 
+[Live Link](https://nickfrost2.github.io/JSPlayz/ "JSPlayz")
 
 # TO BUILD
 
-* [X] Step Counter
-* [X] Temeperature converter
-* [ ] Number base converter
-* [X] Number Guesser game
-* [X] Random Number Generator
-* [ ] Learn your phone number
-* [ ] Word quess game for single player
-* [ ] Word quess game for multi player
-* [ ] Stop Watch
-* [X] Dice Roller
+- [x] Counter
+- [x] Dice Roller
+- [x] Digital Clock
+- [x] Directional Stopwatch
+- [x] Number Guesser game
+- [x] Password Generator
+- [x] Temeperature converter
+- [ ] Number base converter
+- [x] Random Number Generator
+- [ ] Learn your phone number
+- [x] Word quess game for single player
+- [ ] Word quess game for multi player
+- [x] StopWatch
+- [ ] Calculator
+- [ ] Weather App
+- [ ] Image Slider
