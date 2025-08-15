@@ -1,0 +1,81 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+
+}
+
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background: linear-gradient(135deg, #00D4FF 0%, #001014 100%);
+}
+
+form {
+   justify-content: center;
+   align-items: center;
+   background: white;
+   padding: 25px;
+   border-radius: 16px;
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+   width: 350px;
+   min-width: fit-content;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+h1 {
+   font-size: 1.8rem;
+   margin-bottom: 15px;
+}
+
+#display {
+   font-size: 2rem;
+   font-weight: bold;
+   color: #333;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #f8f9fa;
+   border-radius: 8px;
+   user-select: all;
+}
+
+#convertButton {
+   padding: 12px 24px;
+   font-size: 1.1em;
+   cursor: pointer;
+   border-radius: 8px;
+   outline: 0;
+   border: none;
+   color: white;
+   transition: all 0.3s ease-in-out, transform 0.2s ease;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   background: linear-gradient(135deg, #00D4FF 0%, #00BFFF 100%);
+
+   &:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #00BFFF 0%, #001014 100%);
+   }
+}
+
+input[type="number"] {
+   height: 2.5rem;
+   color: black;
+   background: #fbfdff;
+   border-radius: 8px;
+   padding: 10px;
+   margin: 5px;
+   border: 2px solid #00bfff33;
+   width: 90%;
+   font-size: 1em;
+   outline: none;
+
+   &:hover {
+      border: 2px solid #00bfff65;
+   }
+}
