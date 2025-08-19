@@ -1,0 +1,151 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background: linear-gradient(135deg, #00D4FF 0%, #001014 100%);
+}
+
+nav {
+   width: 3rem;
+   height: 3rem;
+   background: #001014;
+   margin: 10px;
+   border-radius: 100%;
+   aspect-ratio: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   font-size: 1.5rem;
+   padding: 10px;
+   position: fixed;
+   top: 0;
+   right: 0;
+   z-index: 1000;
+   transition: all 300ms;
+
+   &:hover {
+      background: #0ea5e9;
+      /* color: #001014; */
+   }
+}
+
+main {
+   text-align: center;
+   background: white;
+   padding: 25px;
+   border-radius: 16px;
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+   max-width: 21rem;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.button_container {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   /* grid-template-rows: repeat(6, 1fr); */
+   gap: 10px;
+}
+
+.button_container button {
+   padding: 15px;
+   font-size: 1.5rem;
+   border: none;
+   border-radius: 8px;
+   background: #00BFFF;
+   color: white;
+   cursor: pointer;
+   transition: background 0.3s;
+
+   &:hover {
+      filter: contrast(150%);
+   }
+}
+
+#equal {
+   background: #FF8C00;
+   grid-area: auto/auto/span 2/auto;
+
+   &:hover {
+      filter: contrast(300%);
+   }
+}
+
+#zero {
+   grid-column: span 2;
+}
+
+.display {
+   position: relative;
+}
+
+#result {
+   border: 1px solid #00BFFF;
+   border-radius: 8px;
+   padding: 10px;
+   background: #f9f9f9;
+   width: 100%;
+   height: 50px;
+   font-size: 24px;
+   text-align: right;
+
+}
+
+.cursor {
+   position: absolute;
+   right: 7px;
+   top: 10px;
+   width: 2px;
+   height: 30px;
+   background: #00BFFF;
+   animation-name: blink;
+   animation-duration: 1.2s;
+   animation-timing-function: steps(1);
+   animation-iteration-count: infinite;
+}
+
+#error {
+   color: red;
+   position: absolute;
+   left: 10px;
+   top: 15px;
+}
+
+@keyframes blink {
+
+   from,
+   to {
+      opacity: 1;
+   }
+
+   50% {
+      opacity: 0;
+   }
+}
+
+#clear {
+   background: hsl(0, 22%, 93%);
+   color: #FF4C4C;
+
+   &:hover {
+      filter: brightness(90%);
+   }
+}
+
+.operationalBtn {
+   background: #FF4C4C !important;
+
+   &:hover {
+      filter: contrast(150%) !important;
+   }
+}
