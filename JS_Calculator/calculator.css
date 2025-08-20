@@ -81,9 +81,6 @@ main {
    }
 }
 
-#zero {
-   grid-column: span 2;
-}
 
 .display {
    position: relative;
@@ -98,6 +95,9 @@ main {
    height: 50px;
    font-size: 24px;
    text-align: right;
+   /* overflow-x: auto;
+   overflow-y: hidden;
+   resize: none; */
 
 }
 
