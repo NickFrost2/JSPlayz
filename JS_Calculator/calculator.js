@@ -6,7 +6,7 @@ function appendTodisplay(input) {
 }
 
 function deleteLastCharacter() {
-   display.value = display.value.slice(0, -1);
+   display.value = display.value.replace(/,/g, '').slice(0, -1);
 }
 
 function clearDisplay() {
@@ -16,7 +16,7 @@ function clearDisplay() {
 function calculateResult() {
    try {
       display.value =
-         eval(display.value.replace(/×/g, '*').replace(/÷/g, '/').replace(/K/gi, '000')).toLocaleString();
+         eval(display.value.replace(/×/g, '*').replace(/÷/g, '/').replace(/K/gi, '000').replace(/,/g, '')).toLocaleString();
    } catch {
       error();
    }
