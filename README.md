@@ -21,6 +21,7 @@ JSPlayz is a growing collection of fun, beginner-friendly JavaScript projects an
 - [x] Word quess game for single player
 - [ ] Word quess game for multi player
 - [x] StopWatch
-- [ ] Calculator
+- [x] Calculator
+- [x] Rock Paper Sciccors
 - [ ] Weather App
 - [ ] Image Slider
