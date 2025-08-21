@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Rock Paper Scissors Game</title>
+   <link rel="stylesheet" href="file.css">
+</head>
+
+<body>
+   <a href="../index.html">
+      <nav>
+         &#10174;
+      </nav>
+   </a>
+
+   <main>
+      <h1>Rock Paper Scissors</h1>
+
+      <div class="score-container">
+         <div class="score-box">
+            <div class="score-title">Your Score</div>
+            <div id="PlayerScore" class="score">0</div>
+         </div>
+         <div class="score-box">
+            <div class="score-title">Computer Score</div>
+            <div id="ComputerScore" class="score">0</div>
+         </div>
+      </div>
+
+      <div class="choices">
+         <button class="choice-btn rock" onclick="playGame('Rock')">👊</button>
+         <button class="choice-btn paper" onclick="playGame('Paper')">✋</button>
+         <button class="choice-btn scissors" onclick="playGame('Scissors')">✌️</button>
+      </div>
+
+      <div class="results">
+         <div class="selections">
+            <div id="PlayerResult" class="selection">Player:-</div>
+            <div id="ComputerResult" class="selection">Computer:-</div>
+         </div>
+         <div id="Result" class="result-text">Make your move!</div>
+      </div>
+
+      <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+   </main>
+
+   <script src="file.js">
+   </script>
+</body>
+
+</html>
