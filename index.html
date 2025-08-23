@@ -193,7 +193,8 @@
          }
       }
 
-      nav {
+      nav,
+      .github-icon {
          width: max-content;
          background: #001014;
          margin: 10px;
@@ -211,20 +212,32 @@
          left: 0;
          z-index: 1000;
          transition: all 300ms;
+
          &:hover {
             background: #0ea5e9;
             /* color: #001014; */
          }
+      }
+
+      .github-icon {
+         left: unset;
+         right: 0;
       }
    </style>
 </head>
 
 <body>
 
-   <a href="index.html">
-   <nav>
-      <i class="fas fa-house"></i>
-   </nav>
+   <a href="index.html" title="Home">
+      <nav>
+         <i class="fas fa-house"></i>
+      </nav>
+   </a>
+
+   <a href="https://github.com/NickFrost2/JSPlayz" target="_blank" rel="noopener noreferrer" title="Go to repository">
+      <div class="github-icon">
+         <i class="fab fa-github"></i>
+      </div>
    </a>
 
    <main>
