@@ -1,0 +1,542 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 1rem;
+   height: 100vh;
+   background: linear-gradient(135deg, #00D4FF 0%, #001014 100%);
+}
+
+nav {
+   width: 3rem;
+   height: 3rem;
+   background: #001014;
+   margin: 10px;
+   border-radius: 100%;
+   aspect-ratio: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   font-size: 1.5rem;
+   padding: 10px;
+   position: fixed;
+   top: 0;
+   right: 0;
+   z-index: 1000;
+   transition: all 300ms;
+
+   &:hover {
+      background: #0ea5e9;
+   }
+}
+
+main {
+   justify-content: center;
+   align-items: center;
+   background: white;
+   border-radius: 10px;
+   padding: 15px;
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+   width: clamp(300px, 80%, 400px);
+   display: flex;
+   flex-direction: column;
+   transition: all 300ms ease-in-out;
+}
+
+/* *Digital clock css */
+.digitalClock {
+   justify-content: center;
+   align-items: center;
+   border-radius: 16px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   margin-top: 15px;
+}
+
+.tittle {
+   font-size: 2rem;
+}
+
+.clock-display {
+   background: grey;
+   font-weight: bold;
+   color: #333;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #f8f9fa;
+   border-radius: 0.5rem;
+   border: 3px solid #e9ecef;
+   width: 100%;
+   padding: 10px 0;
+}
+
+#clock {
+   font-size: 2rem;
+}
+
+/* *for toggle */
+
+.toggle-container {
+   display: flex;
+   justify-content: center;
+   width: max-content;
+}
+
+.toggle-label {
+   position: relative;
+   cursor: pointer;
+}
+
+.toggle-peer {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0, 0, 0, 0);
+   white-space: nowrap;
+   border-width: 0;
+}
+
+.toggle-div {
+   width: 45px;
+   height: 24px;
+   background-color: rgba(128, 128, 128, 0.315);
+   border-radius: 30px;
+   transition: all 300ms;
+}
+
+.toggle-peer:checked~.toggle-div {
+   background-color: #001014;
+}
+
+.toggle-peer:checked~.toggle-circle {
+   transform: translateX(21px);
+}
+
+.toggle-peer:checked~.text-pm {
+   display: inline;
+}
+
+.toggle-peer:checked~.text-am {
+   display: none;
+}
+
+.toggle-circle {
+   position: absolute;
+   left: 4px;
+   top: 4px;
+   width: 16px;
+   height: 16px;
+   background-color: white;
+   border-radius: 100%;
+   transition: all 300ms ease-in-out;
+}
+
+/* *Analogue Clock */
+.clockFace {
+   width: 100%;
+   aspect-ratio: 1/1;
+   border: clamp(5px, 2vw, 10px) solid #001014;
+   border-radius: 50%;
+   position: relative;
+   overflow: hidden;
+   background-color: rgba(255, 255, 255, 0.8);
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1);
+
+   &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: #001014 solid 3px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      width: 4%;
+      aspect-ratio: 1/1;
+      z-index: 2;
+   }
+
+   &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(285deg, rgba(0, 0, 0, 0.03) 50%, rgba(255, 255, 255, 0.1) 50%);
+      pointer-events: none;
+      z-index: 1;
+   }
+}
+
+.num {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   text-align: center;
+   font-size: 1.7rem;
+   font-weight: 700;
+   padding: 12px;
+   color: #001014;
+
+   &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5%;
+      height: 4%;
+      background-color: #001014;
+   }
+}
+
+.num1 {
+   transform: rotate(30deg);
+}
+
+.num1 div {
+   transform: rotate(-30deg);
+}
+
+.num2 {
+   transform: rotate(60deg);
+}
+
+.num2 div {
+   transform: rotate(-60deg);
+}
+
+.num3 {
+   transform: rotate(90deg);
+}
+
+.num3 div {
+   transform: rotate(-90deg);
+}
+
+.num4 {
+   transform: rotate(120deg);
+}
+
+.num4 div {
+   transform: rotate(-120deg);
+}
+
+.num5 {
+   transform: rotate(150deg);
+}
+
+.num5 div {
+   transform: rotate(-150deg);
+}
+
+.num6 {
+   transform: rotate(180deg);
+}
+
+.num6 div {
+   transform: rotate(-180deg);
+}
+
+.num7 {
+   transform: rotate(210deg);
+}
+
+.num7 div {
+   transform: rotate(-210deg);
+}
+
+.num8 {
+   transform: rotate(240deg);
+}
+
+.num8 div {
+   transform: rotate(-240deg);
+}
+
+.num9 {
+   transform: rotate(270deg);
+}
+
+.num9 div {
+   transform: rotate(-270deg);
+}
+
+.num10 {
+   transform: rotate(300deg);
+}
+
+.num10 div {
+   transform: rotate(-300deg);
+}
+
+.num11 {
+   transform: rotate(330deg);
+}
+
+.num11 div {
+   transform: rotate(-330deg);
+}
+
+
+.hand {
+   position: absolute;
+   bottom: 50%;
+   left: 50%;
+   transform-origin: bottom;
+}
+
+.hourHand {
+   height: 30%;
+   width: 2%;
+   background-color: #001014;
+   border-radius: 40px;
+}
+
+.minuteHand {
+   height: 35%;
+   width: 1%;
+   background: #00D4FF;
+   border-radius: 20px;
+}
+
+.secondHand {
+   height: 45%;
+   width: 0.4%;
+   background: red;
+   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+   transition-duration: 0.5ms;
+   z-index: 1;
+}
+
+.line {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+
+   &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.4px;
+      height: 3%;
+      background-color: rgba(0, 16, 20, 0.376);
+      z-index: 10;
+   }
+}
+
+.line1 {
+   transform: rotate(6deg);
+}
+
+.line2 {
+   transform: rotate(12deg);
+}
+
+.line3 {
+   transform: rotate(18deg);
+}
+
+.line4 {
+   transform: rotate(24deg);
+}
+
+/* skip line of 5 and it's multiple */
+
+.line6 {
+   transform: rotate(36deg);
+}
+
+.line7 {
+   transform: rotate(42deg);
+}
+
+.line8 {
+   transform: rotate(48deg);
+}
+
+.line9 {
+   transform: rotate(54deg);
+}
+
+.line11 {
+   transform: rotate(66deg);
+}
+
+.line12 {
+   transform: rotate(72deg);
+}
+
+.line13 {
+   transform: rotate(78deg);
+}
+
+.line14 {
+   transform: rotate(84deg);
+}
+
+.line16 {
+   transform: rotate(96deg);
+}
+
+.line17 {
+   transform: rotate(102deg);
+}
+
+.line18 {
+   transform: rotate(108deg);
+}
+
+.line19 {
+   transform: rotate(114deg);
+}
+
+.line21 {
+   transform: rotate(126deg);
+}
+
+.line22 {
+   transform: rotate(132deg);
+}
+
+.line23 {
+   transform: rotate(138deg);
+}
+
+.line24 {
+   transform: rotate(144deg);
+}
+
+.line26 {
+   transform: rotate(156deg);
+}
+
+.line27 {
+   transform: rotate(162deg);
+}
+
+.line28 {
+   transform: rotate(168deg);
+}
+
+.line29 {
+   transform: rotate(174deg);
+}
+
+.line31 {
+   transform: rotate(186deg);
+}
+
+.line32 {
+   transform: rotate(192deg);
+}
+
+.line33 {
+   transform: rotate(198deg);
+}
+
+.line34 {
+   transform: rotate(204deg);
+}
+
+.line36 {
+   transform: rotate(216deg);
+}
+
+.line37 {
+   transform: rotate(222deg);
+}
+
+.line38 {
+   transform: rotate(228deg);
+}
+
+.line39 {
+   transform: rotate(234deg);
+}
+
+.line41 {
+   transform: rotate(246deg);
+}
+
+.line42 {
+   transform: rotate(252deg);
+}
+
+.line43 {
+   transform: rotate(258deg);
+}
+
+.line44 {
+   transform: rotate(264deg);
+}
+
+.line46 {
+   transform: rotate(276deg);
+}
+
+.line47 {
+   transform: rotate(282deg);
+}
+
+.line48 {
+   transform: rotate(288deg);
+}
+
+.line49 {
+   transform: rotate(294deg);
+}
+
+.line51 {
+   transform: rotate(306deg);
+}
+
+.line52 {
+   transform: rotate(312deg);
+}
+
+.line53 {
+   transform: rotate(318deg);
+}
+
+.line54 {
+   transform: rotate(324deg);
+}
+
+.line56 {
+   transform: rotate(336deg);
+}
+
+.line57 {
+   transform: rotate(342deg);
+}
+
+.line58 {
+   transform: rotate(348deg);
+}
+
+.line59 {
+   transform: rotate(354deg);
+}
