@@ -18,11 +18,14 @@ JSPlayz is a growing collection of fun, beginner-friendly JavaScript projects an
 - [x] Number base converter
 - [x] Random Number Generator
 - [x] Weather App
+- [ ] QR code generator
 - [ ] Learn your phone number
 - [x] Word quess game for single player
 - [ ] Word quess game for multi player
 - [x] StopWatch
 - [x] Calculator
 - [x] Rock Paper Sciccors
-- [ ] Weather App
+- [x] Weather App
 - [ ] Image Slider
+- [ ] Countdown Timer
+- [x] Random Quote/Fact Generator
