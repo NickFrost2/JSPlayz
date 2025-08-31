@@ -28,4 +28,5 @@ JSPlayz is a growing collection of fun, beginner-friendly JavaScript projects an
 - [x] Weather App
 - [ ] Image Slider
 - [ ] Countdown Timer
+- [x] Toast Notification
 - [x] Random Quote/Fact Generator
