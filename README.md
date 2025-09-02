@@ -8,25 +8,26 @@ JSPlayz is a growing collection of fun, beginner-friendly JavaScript projects an
 
 # TO BUILD
 
-- [x] Counter
-- [x] Dice Roller
-- [x] Digital Clock
-- [x] Directional Stopwatch
-- [x] Number Guesser game
-- [x] Password Generator
-- [x] Temeperature converter
-- [x] Number base converter
-- [x] Random Number Generator
-- [x] Weather App
+- [X] Counter
+- [X] Dice Roller
+- [X] Digital Clock
+- [X] Directional Stopwatch
+- [X] Number Guesser game
+- [X] Password Generator
+- [X] Temeperature converter
+- [X] Number base converter
+- [X] Random Number Generator
+- [X] Weather App
 - [ ] QR code generator
 - [ ] Learn your phone number
-- [x] Word quess game for single player
+- [X] Word quess game for single player
 - [ ] Word quess game for multi player
-- [x] StopWatch
-- [x] Calculator
-- [x] Rock Paper Sciccors
-- [x] Weather App
+- [X] StopWatch
+- [X] Calculator
+- [X] Rock Paper Sciccors
+- [X] Weather App
 - [ ] Image Slider
 - [ ] Countdown Timer
-- [x] Toast Notification
-- [x] Random Quote/Fact Generator
+- [X] Toast Notification
+- [X] Random Quote/Fact Generator
+- [X] Dictionary
