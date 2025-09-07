@@ -1,19 +1,82 @@
+// @ts-nocheck
 document.addEventListener('DOMContentLoaded', () => {
    const searchInput = document.getElementById('searchInput');
    const searchBtn = document.getElementById('searchBtn');
 
    const wordDisplay = document.getElementById('wordDisplay');
    const phoneticDisplay = document.getElementById('phoneticDisplay');
+   const sidebarDisplay = document.querySelector('.sidebar');
 
    const synonymsList = document.getElementById('synonymsList');
    const antonymsList = document.getElementById('antonymsList');
+   const bookmarkList = document.getElementById('bookmarkList');
 
    // Control elements
    const pronunciationBtn = document.getElementById('pronunciationBtn');
    const bookmarkBtn = document.getElementById('favoriteBtn');
    const pronunciationAudio = document.getElementById('pronunciationAudio');
+   const bookmarkFolder = document.querySelector('.bookmarkFolder');
 
-   const bookMark = [];
+
+   document.addEventListener('click', (event) => {
+      const isBookMarkBtnCLicked = bookmarkFolder.contains(event.target);
+      const isSidebarClicked = sidebarDisplay.contains(event.target);
+      if (!isBookMarkBtnCLicked && !isSidebarClicked) {
+         hideBookmarks();
+      }
+   });
+
+   bookmarkFolder.addEventListener('click', showBookmarks);
+   function showBookmarks(event) {
+      event.stopPropagation();
+      if (bookmarkFolder.innerHTML === '<i class="fa-solid fa-xmark"></i>') return hideBookmarks();
+
+      let { bookMark } = checkBookmark();
+      bookmarkList.innerHTML = '';
+
+      bookMark.forEach(bookmark => {
+         new Variant(bookmark).constructBookmark();
+      });
+      bookmarkFolder.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+      sidebarDisplay.classList.remove('hidden');
+
+   };
+
+   function hideBookmarks() {
+      bookmarkFolder.innerHTML = '<i class="fa-solid fa-folder-bookmark"></i>';
+      sidebarDisplay.classList.add('hidden');
+   }
+
+   bookmarkBtn.addEventListener('click', () => {
+      const word = wordDisplay.textContent;
+      let { bookMark, isBookmarked } = checkBookmark(word);
+
+      if (isBookmarked) {
+         bookMark = bookMark.filter(item => item !== word);
+         bookmarkBtn.classList.remove('favorited');
+      }
+      else {
+         bookMark = [...bookMark, word];
+         bookmarkBtn.classList.add('favorited');
+      };
+
+      localStorage.setItem('bookmarkedWords', JSON.stringify(bookMark));
+   });
+
+   function checkBookmark(word = 'word') {
+      try {
+         const storeBookMark = localStorage.getItem('bookmarkedWords');
+         let bookMark = storeBookMark ? JSON.parse(storeBookMark) : [];
+         const isBookmarked = bookMark.includes(word);
+         return { bookMark, isBookmarked }
+      }
+      catch (error) {
+         console.error(error);
+         return {
+            bookMark: [], isBookmarked: false
+         }
+      }
+   }
 
    function setVisibleState(visibleElement) {
       const states = ['resultSection', 'errorMessage', 'loadingState', 'emptyState'];
@@ -111,11 +174,10 @@ document.addEventListener('DOMContentLoaded', () => {
                   ...meaning.definitions.flatMap(def => def.synonyms)
                ])
                .filter(Boolean);
-
             const uniqueSynonyms = [...new Set(allSynonyms)];
             uniqueSynonyms.forEach((synonym, index) => {
                new Variant(synonym).constructSynonyms();
-            })
+            });
 
             // *Get all Antonyms for the entire word
             const allAntonyms = data
@@ -125,17 +187,30 @@ document.addEventListener('DOMContentLoaded', () => {
                   ...meaning.definitions.flatMap(def => def.antonyms || [])
                ])
                .filter(antonym => antonym && antonym.trim() !== '');
-
             const uniqueAntonyms = [...new Set(allAntonyms)];
             uniqueAntonyms.forEach((antonym, index) => {
                new Variant(antonym).constructAntonyms();
             });
 
+            //* Check if word is bookmarked
+            try {
+               let { isBookmarked } = checkBookmark(word);
+               if (isBookmarked) {
+                  bookmarkBtn.classList.add('favorited')
+               } else {
+                  bookmarkBtn.classList.remove('favorited')
+               }
+            }
+            catch (error) {
+               console.log(error);
+            }
+
+            setVisibleState('resultSection')
             setVisibleState('resultSection');
          })
          .catch(error => {
             console.error('Error fetching data:', error);
-            setVisibleState('errorMessage')
+            setVisibleState('errorMessage');
          })
    };
 
@@ -189,8 +264,8 @@ document.addEventListener('DOMContentLoaded', () => {
    }
 
    class Variant {
-      constructor(variation) {
-         this.text = variation;
+      constructor(text) {
+         this.text = text;
       }
 
       _createButton() {
@@ -209,6 +284,12 @@ document.addEventListener('DOMContentLoaded', () => {
       constructAntonyms() {
          const newBtn = this._createButton();
          antonymsList.appendChild(newBtn);
+      }
+
+      constructBookmark() {
+         const newBtn = this._createButton();
+         newBtn.classList.remove('word-tags');
+         bookmarkList.prepend(newBtn);
       }
    }
 
