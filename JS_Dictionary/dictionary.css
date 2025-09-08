@@ -1,3 +1,12 @@
+:root {
+   --primary-color: hsl(190, 100%, 50%);
+   --secondary-color: hsl(192, 100%, 4%);
+   --black-color: #333;
+   --white-color: white;
+   --gray: #666;
+   --accent-color: #0ea5e9;
+}
+
 * {
    margin: 0;
    padding: 0;
@@ -9,25 +18,25 @@ body {
    min-height: 100vh;
    padding: 20px;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   background: linear-gradient(135deg, #00D4FF 0%, #001014 100%);
+   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
 
 nav,
 .bookmarkFolder {
    width: 3rem;
    height: 3rem;
-   background: #001014;
+   background: var(--secondary-color);
    margin: 10px;
    border-radius: 100%;
    aspect-ratio: 1;
    display: flex;
    justify-content: center;
    align-items: center;
-   color: white;
+   color: var(--white-color);
    font-size: 1.5rem;
    cursor: pointer;
    padding: 10px;
-   position: fixed;
+   position: absolute;
    top: 0;
    left: 0;
    z-index: 101;
@@ -36,24 +45,24 @@ nav,
    border: none;
 
    &:hover {
-      background: #0ea5e9
+      background: var(--accent-color);
    }
 }
 
 .container {
    max-width: 900px;
    margin: 0 auto;
-   background: white;
+   background: var(--white-color);
    border-radius: 20px;
    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
    overflow: hidden;
 }
 
 .header {
-   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+   background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
    padding: 30px;
    text-align: center;
-   color: white;
+   color: var(--white-color);
 }
 
 .header h1 {
@@ -84,7 +93,7 @@ nav,
    outline: none;
 
    &:focus {
-      border-color: #00D4FF;
+      border-color: var(--primary-color);
       box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
    }
 }
@@ -94,13 +103,13 @@ nav,
    right: 5px;
    top: 50%;
    transform: translateY(-50%);
-   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+   background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
    border: none;
    border-radius: 50px;
    max-width: 30%;
    padding: 12px 22px;
    font-size: 1.1rem;
-   color: white;
+   color: var(--white-color);
    cursor: pointer;
    transition: all 0.3s ease;
    display: flex;
@@ -116,13 +125,13 @@ nav,
 .loading {
    text-align: center;
    padding: 20px;
-   color: #666;
+   color: var(--gray);
 }
 
 .loader {
    width: 30px;
    aspect-ratio: 1;
-   background: #001014;
+   background: var(--secondary-color);
    display: grid;
    animation: l4-0 0.7s infinite linear;
    margin: 0 auto 10px;
@@ -132,13 +141,13 @@ nav,
 .loader::after {
    content: "";
    grid-area: 1/1;
-   background: #ffffff;
+   background: var(--white-color);
    animation: inherit;
    animation-name: l4-1;
 }
 
 .loader::after {
-   background: #00D4FF;
+   background: var(--primary-color);
    --s: 60deg;
 }
 
@@ -174,7 +183,7 @@ nav,
    justify-content: space-between;
    margin: 30px 0;
    padding-bottom: 10px;
-   border-bottom: 2px solid #f0f0f0;
+   border-bottom: 2px solid var(--white-color);
 }
 
 .word-title {
@@ -186,13 +195,13 @@ nav,
 #wordDisplay {
    font-size: 2.5rem;
    font-weight: 700;
-   color: #333;
+   color: var(--black-color);
    margin: 0;
 }
 
 #phoneticDisplay {
    font-size: 1.2rem;
-   color: #666;
+   color: var(--gray);
    font-style: italic;
    vertical-align: middle;
 }
@@ -205,7 +214,7 @@ nav,
 
 #pronunciationBtn {
    background: transparent;
-   border: 1.5px solid #00D4FF;
+   border: 1.5px solid var(--primary-color);
    border-radius: 50%;
    width: 50px;
    aspect-ratio: 1;
@@ -214,11 +223,11 @@ nav,
    align-items: center;
    justify-content: center;
    font-size: 1.3rem;
-   color: #333;
+   color: var(--black-color);
 
    &:hover {
-      background: #00D4FF;
-      color: #001014;
+      background: var(--primary-color);
+      color: var(--secondary-color);
    }
 }
 
@@ -227,16 +236,21 @@ nav,
    margin-bottom: 30px;
 }
 
+/* .part-of-speech-section {
+   height: 20px;
+   overflow: hidden;
+} */
+
 .part-of-speech-title {
    font-size: 1.1rem;
-   color: #333;
+   color: var(--black-color);
    margin-bottom: 12px;
 }
 
 .section-title {
    font-size: 1.3rem;
    font-weight: 600;
-   color: #333;
+   color: var(--black-color);
    margin-bottom: 15px;
    display: flex;
    align-items: center;
@@ -246,37 +260,36 @@ nav,
       content: '';
       width: 4px;
       height: 20px;
-      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
       border-radius: 2px;
    }
 }
 
 .definition-item {
-   background: #fff;
+   background: var(--white-color);
    outline: 1px solid #e9ecef;
    border-radius: 10px;
    padding: 20px;
    margin-bottom: 15px;
-   margin-left: 15px;
 
    &:hover {
-      outline: 1.5px solid #00D4FF;
+      outline: 1.5px solid var(--primary-color);
    }
 }
 
 .definition-text {
    font-size: 1.1rem;
    line-height: 1.6;
-   color: #333;
+   color: var(--black-color);
 
 }
 
 .example-text {
    font-style: italic;
-   color: #666;
-   background: #f8f9fa;
+   color: var(--gray);
+   background: var(--white-color);
    padding: 10px;
-   border-left: 3px solid #00D4FF;
+   border-left: 3px solid var(--primary-color);
    margin-top: 10px;
 }
 
@@ -306,16 +319,16 @@ nav,
    font-size: 0.95rem;
    font-weight: 500;
    background: transparent;
-   border: 1.5px solid #00D4FF;
+   border: 1.5px solid var(--primary-color);
    cursor: pointer;
    display: flex;
    align-items: center;
    justify-content: center;
-   color: #333;
+   color: var(--black-color);
 
    &:hover {
-      background: #00D4FF;
-      color: #001014;
+      background: var(--primary-color);
+      color: var(--secondary-color);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
    }
 }
@@ -344,23 +357,27 @@ nav,
    align-items: center;
    justify-content: center;
    font-size: 1.3rem;
+
+   &:hover {
+      background: var(--primary-color);
+   }
 }
 
 .favorite-btn.favorited {
    background: #ff6b6b;
-   color: white;
+   color: var(--white-color);
 }
 
 .empty-state {
    text-align: center;
    padding: 60px 40px;
-   color: #666;
+   color: var(--gray);
 }
 
 .empty-state h3 {
    font-size: 1.5rem;
    margin-bottom: 10px;
-   color: #333;
+   color: var(--black-color);
 }
 
 .empty-state p {
@@ -370,14 +387,14 @@ nav,
 
 .sidebar {
    height: 100%;
-   background: #001014;
+   background: var(--secondary-color);
    z-index: 100;
-   width: 0;
    position: fixed;
+   width: clamp(100px, 70%, 250px);
    top: 0;
    right: 0;
    padding: 20px 15px 0;
-   color: #00D4FF;
+   color: var(--primary-color);
    overflow-x: hidden;
    overflow-y: auto;
    animation: slideIn 0.3s linear forwards;
@@ -389,7 +406,7 @@ nav,
    }
 
    100% {
-      width: clamp(100px, 70%, 200px);
+      width: clamp(100px, 70%, 250px);
    }
 }
 
@@ -407,14 +424,14 @@ nav,
       text-align: start;
       width: 100%;
       cursor: pointer;
-      color: white;
+      color: var(--white-color);
       text-transform: capitalize;
       font-size: 1.2rem;
       font-weight: 500;
       border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 
       &:hover {
-         color: #00D4FF;
+         color: var(--primary-color);
       }
 
       /* &::before {
@@ -426,6 +443,7 @@ nav,
 .bookmarkFolder {
    right: 0;
    left: unset;
+   position: fixed;
 }
 
 .bookmarkFolder:hover~.sidebar {
@@ -474,15 +492,11 @@ nav,
 
 /* Utility classes for JavaScript */
 .hidden {
-   display: none !important;
+   display: none;
 }
 
 .show {
-   display: block !important;
-   animation: fadeIn 0.5s ease-in;
-}
-
-.fade-in {
+   display: block;
    animation: fadeIn 0.5s ease-in;
 }
 
