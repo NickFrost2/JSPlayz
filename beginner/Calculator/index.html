@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calculator</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <a href="../../">
+      <nav>
+         &#10174;
+      </nav>
+   </a>
+
+   <main>
+      <header>
+         <h1>🧮Calculator</h1>
+      </header>
+      <div class="display">
+         <span class="cursor"></span>
+         <span id="error"></span>
+         <input type="text" id="result" placeholder="0">
+      </div>
+      <div class="button_container">
+         <button id="clear" onclick="clearDisplay('C')">C</button>
+         <button class="operationalBtn" id="divide" onclick="appendTodisplay('÷')">÷</button>
+         <button class="operationalBtn" id="multiply" onclick="appendTodisplay('×')">×</button>
+         <button class="operationalBtn" id="subtract" onclick="deleteLastCharacter()">⩹</button>
+         <button id="seven" onclick="appendTodisplay('7')">7</button>
+         <button id="eight" onclick="appendTodisplay('8')">8</button>
+         <button id="nine" onclick="appendTodisplay('9')">9</button>
+         <button class="operationalBtn" id="subtract" onclick="appendTodisplay('-')">−</button>
+         <button id="four" onclick="appendTodisplay('4')">4</button>
+         <button id="five" onclick="appendTodisplay('5')">5</button>
+         <button id="six" onclick="appendTodisplay('6')">6</button>
+         <button class="operationalBtn" id="add" onclick="appendTodisplay('+')">+</button>
+         <button id="one" onclick="appendTodisplay('1')">1</button>
+         <button id="two" onclick="appendTodisplay('2')">2</button>
+         <button id="three" onclick="appendTodisplay('3')">3</button>
+         <button id="equal" onclick="calculateResult()">=</button>
+         <button id="thousand" onclick="appendTodisplay('K')">K</button>
+         <button id="zero" onclick="appendTodisplay('0')">0</button>
+         <button id="decimal" onclick="appendTodisplay('.')">•</button>
+      </div>
+   </main>
+
+   <script src="script.js"></script>
+</body>
+
+</html>

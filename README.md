@@ -20,25 +20,26 @@ Master JavaScript fundamentals and basic DOM manipulation.
 
 - [X] **Counter** - Variables, functions, and DOM updates
 - [X] **Dice Roller** - Random numbers and conditional logic
-- [X] **Digital Clock** - Date objects and intervals
 - [X] **Temperature Converter** - Math operations and input handling
 - [X] **Random Number Generator** - Math.random() and user input
 - [X] **Password Generator** - String manipulation and character arrays
 - [X] **Calculator** - Event handling and arithmetic operations
 - [X] **Rock Paper Scissors** - Game logic and comparison operators
+- [X] Stopwatch - Precise timing
 
 ## 🟡 Intermediate Projects
 
 Build more complex applications with APIs and advanced DOM manipulation.
 
-- [X] **Stopwatch** - Precise timing and multiple state management
+- [X] Directional **Stopwatch** - Muiltiple Stopwatch with Precise timing and multiple state management
+- [X] **Clock** - Date objects and intervals
 - [X] **Number Guesser Game** - Game state, loops, and user feedback
 - [X] **Toast Notifications** - Dynamic element creation and CSS animations
 - [X] **Random Quote Generator** - Array manipulation and local storage
-- [X] **Image Slider** - DOM traversal and CSS transitions
 - [X] **Weather App** - API integration and error handling
 - [X] **Dictionary App** - Fetch API and JSON data processing
 - [ ] **QR Code Generator** - Third-party library integration
+- [ ] **Image Slider** - DOM traversal and CSS transitions
 - [ ] **Todo List** - CRUD operations with localStorage
 
 ## 🔴 Advanced Projects
@@ -85,25 +86,31 @@ npx serve .
 
 ```
 JSPlayz/
-├── projects/
-│   ├── beginner/
-│   │   ├── counter/
-│   │   ├── dice-roller/
-│   │   └── ...
-│   ├── intermediate/
-│   │   ├── stopwatch/
-│   │   ├── weather-app/
-│   │   └── ...
-│   └── advanced/
-│       ├── word-guess/
-│       ├── snake-game/
-│       └── ...
+├── beginner/
+│   ├── Project Name/
+|   |	├── index.html
+|   |	├── script.js
+|   |	└── style.css
+│   └── ...
+├── intermediate/
+│   ├── Project Name/
+|   |	├── index.html
+|   |	├── script.js
+|   |	└── style.css
+│   └── ...
+│── advanced/
+│   ├── Project Name/
+|   |	├── index.html
+|   |	├── script.js
+|   |	└── style.css
+│   └── ...
 ├── assets/
 │   ├── css/
 │   ├── js/
 │   └── images/
 ├── index.html
 └── README.md
+└── LINCENCE.md
 ```
 
 ## 🎯 Learning Objectives

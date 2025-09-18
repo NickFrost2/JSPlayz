@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Password Generator</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <a href="../../">
+      <nav>
+         &#10174;
+      </nav>
+   </a>
+
+   <main>
+      <h1 class="tittle">🔑Password Generator</h1>
+      <div>
+         Lenght:<input type="number" value="6" id="lenght">
+      </div>
+
+      <div class="option-container">
+      <div class="toggle-container">
+         <label for="uppercase">UpperCase</label> &ensp;
+         <label class="toggle-label">
+            <input type="checkbox" class="toggle-peer" name="uppercase" id="uppercase" checked>
+            <div class="toggle-div">
+            </div>
+            <div class="toggle-circle">
+            </div>
+         </label>
+      </div>
+
+      <div class="toggle-container">
+         <label for="lowercase">LowerCase</label> &ensp;
+         <label class="toggle-label">
+            <input type="checkbox" class="toggle-peer" name="lowercase" id="lowercase" checked>
+            <div class="toggle-div">
+            </div>
+            <div class="toggle-circle">
+            </div>
+         </label>
+      </div>
+
+      <div class="toggle-container">
+         <label for="symbol">Symbol</label> &ensp;
+         <label class="toggle-label">
+            <input type="checkbox" class="toggle-peer" name="symbol" id="symbol" checked>
+            <div class="toggle-div">
+            </div>
+            <div class="toggle-circle">
+            </div>
+         </label>
+      </div>
+
+      <div class="toggle-container">
+         <label for="number">Number</label> &ensp;
+         <label class="toggle-label">
+            <input type="checkbox" class="toggle-peer" name="number" id="number" checked>
+            <div class="toggle-div">
+            </div>
+            <div class="toggle-circle">
+            </div>
+         </label>
+      </div>
+
+   </div>
+
+      <p id="display">######</p>
+      <button onclick="generatePassword()">Generate</button>
+   </main>
+   <script src="script.js">
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Dictionary</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+
+</head>
+
+<body>
+   <a href="../..">
+      <nav>
+         &#8656;
+      </nav>
+   </a>
+   <div class="container">
+      <!-- *Header -->
+      <div class="header">
+         <h1><i class="fa-regular fa-book-open"></i> Dictionary</h1>
+         <p>Discover the meaning, pronunciation, and more</p>
+      </div>
+
+      <!-- *Search Section -->
+      <div class="search-section">
+         <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Enter a word to search..." autofocus>
+            <button id="searchBtn">Search</button>
+         </div>
+      </div>
+
+      <!-- *Loading State -->
+      <div class="loading hidden" id="loadingState">
+         <div class="loader"></div>
+         <p>Searching for your word...</p>
+      </div>
+
+      <!-- *Error Message -->
+      <div class="error-message hidden" id="errorMessage">
+         <h3>Word not found</h3>
+         <p>Sorry, we couldn't find that word. Please check your spelling and try again.</p>
+      </div>
+
+      <!-- *Results Section -->
+      <div class="result-section hidden" id="resultSection">
+         <!-- Word Header -->
+         <div class="word-header">
+            <div class="word-title">
+               <h2 id="wordDisplay">word</h2>
+               <span id="phoneticDisplay">/wɜːrd/</span>
+            </div>
+            <div class="audio-controls">
+               <button id="pronunciationBtn" title="Play pronunciation"><i class="fa-solid fa-volume"></i></button>
+               <button class="favorite-btn" id="favoriteBtn"><i class="fa-regular fa-bookmark"></i></button>
+            </div>
+         </div>
+
+         <!-- *Definitions -->
+         <div class="definitions-container">
+            <h3 class="section-title">Definitions</h3>
+            <div id="definitionsContainer">
+
+            </div>
+         </div>
+
+         <!-- *Synonyms -->
+         <div class="words-container">
+            <h3 class="section-title">Synonyms</h3>
+            <div class="word-list" id="synonymsList">
+
+            </div>
+         </div>
+
+         <!-- *Antonyms -->
+         <div class="words-container">
+            <h3 class="section-title">Antonyms</h3>
+            <div class="word-list" id="antonymsList">
+            </div>
+         </div>
+      </div>
+
+      <!-- *Empty State -->
+      <div class="empty-state fade-in" id="emptyState">
+         <h3>Welcome to your Dictionary!</h3>
+         <p>Search for any word above to get started. You'll see definitions, pronunciations, synonyms, and more.</p>
+      </div>
+
+   </div>
+
+   <!-- *Sidebar section -->
+   <button class="bookmarkFolder"><i class="fa-solid fa-folder-bookmark"></i></button>
+   <section class="sidebar hidden">
+      <h3>BookMarks</h3>
+      <aside id="bookmarkList">
+      </aside>
+   </section>
+
+   <!-- *hidden audio element for pronunciation -->
+   <audio id="pronunciationAudio" preload="none"></audio>
+
+   <script src="script.js"></script>
+</body>
+
+</html>

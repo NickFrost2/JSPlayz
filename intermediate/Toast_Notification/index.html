@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Toast Notification</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <a href="../..">
+      <nav>
+         &#10174;
+      </nav>
+   </a>
+
+   <main>
+      <h1 class="tittle">Custom Message</h1>
+      <input type="text" id="userMessage" placeholder="Enter your message">
+      <div class="controls">
+         <button onclick="displayToast('success')">Success</button>
+         <button onclick="displayToast('error')">Error</button>
+         <button onclick="displayToast('info')">Info</button>
+      </div>
+   </main>
+   
+   <div class="toast-container">
+   </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
