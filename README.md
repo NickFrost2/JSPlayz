@@ -37,7 +37,6 @@ Build more complex applications with APIs and advanced DOM manipulation.
 - [X] **Toast Notifications** - Dynamic element creation and CSS animations
 - [X] **Random Quote Generator** - Array manipulation and local storage
 - [X] **Weather App** - API integration and error handling
-- [X] **Dictionary App** - Fetch API and JSON data processing
 - [ ] **QR Code Generator** - Third-party library integration
 - [ ] **Image Slider** - DOM traversal and CSS transitions
 - [ ] **Todo List** - CRUD operations with localStorage
@@ -47,6 +46,7 @@ Build more complex applications with APIs and advanced DOM manipulation.
 Challenge yourself with complex logic, data structures, and modern JavaScript features.
 
 - [X] **Word Guess Game (Single Player)** - Complex game state and string algorithms
+- [X] **Dictionary App** - Fetch API and JSON data processing
 - [ ] **Word Guess Game (Multiplayer)** - Session management and turn-based logic
 - [ ] **Expense Tracker** - Data visualization and financial calculations
 - [ ] **Memory Card Game** - Algorithm implementation and animation sequences
