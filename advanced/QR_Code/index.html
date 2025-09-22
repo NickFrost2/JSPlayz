@@ -25,62 +25,67 @@
          <div>
             <h4 class="editor-head-first">Primary Options</h4>
             <div class="editor-container">
-               <div class="form-contianer">
-                  <label for="user-input">Text <span class="important">*</span></label>
-                  <textarea name="user-input" id="user-input">text</textarea>
-               </div>
+               <label for="user-input">Text</label>
+               <textarea name="user-input" id="user-input">text</textarea>
 
-               <div class="form-contianer">
-                  <label for="">Image</label>
+               <label>Image</label>
+               <div class="img-control">
                   <input type="file" name="image" id="user-image" accept="image/*">
                   <button class="btn end" id="remove-image">Remove Image</button>
                </div>
 
-               <div class="form-contianer">
-                  <label for="width">Width:</label>
-                  <input type="number" name="width" id="width" value="300"> &ensp;
+               <label for="width">Width:</label>
+               <div class="size-control">
+                  <input type="number" name="width" id="width" value="300">
                   <label for="height">Height:</label>
                   <input type="number" name="height" id="height" value="300">
                </div>
             </div>
          </div>
 
-         <!-- <div>
-            <h4 class="editor-head" data-target="dot-options">Primary Options</h4>
-            <div class="editor-container" id="dot-options">
-               <div class="form-contianer">
-                  <label for="user-input">Text <span class="important">*</span></label>
-                  <textarea name="user-input" id="user-input">text</textarea>
+         <div>
+            <h4 class="editor-head" data-target="dot-option">Dots Options</h4>
+            <div class="editor-container" id="dot-option">
+               <label for="user-input">Dot Style</label>
+               <select name="dot-style" id="dot-style">
+                  <option value="square" selected>Square</option>
+                  <option value="rounded">Rounded</option>
+                  <option value="classy">Classy</option>
+                  <option value="dots">pointillism</option>
+                  <option value="classy-rounded">Classy & Rounded</option>
+                  <option value="extra-rounded">Extra Rounded</option>
+               </select>
+
+               <label for="dot-color">Dot color</label>
+               <input type="color" value="#000000" id="dot-color">
+
+               <!-- <label>Color Variant</label>
+               <div class="img-control">
+                  <input type="file" name="image" id="user-image" accept="image/*">
+                  <button class="btn end" id="remove-image">Remove Image</button>
                </div>
 
-               <div class="form-contianer">
-                  <label for="">Image</label>
-                  <label for="user-image" class="btn">Add Image</label>
-                  <input type="file" name="image" id="user-image" accept="image/*" class="btn hidden">
-                  <p><span class="important" id="image-name">No file selected</span></p>
-                  <button class="btn end">Remove Image</button>
-               </div>
-
-               <div class="form-contianer">
-                  <label for="width">Width:</label>
-                  <input type="number" name="width" id="width" value="300"> &ensp;
+               <label for="width">Width:</label>
+               <div class="size-control">
+                  <input type="number" name="width" id="width" value="300">
                   <label for="height">Height:</label>
                   <input type="number" name="height" id="height" value="300">
-               </div>
+               </div> -->
             </div>
-         </div> -->
+         </div>
       </div>
 
       <div class="qrcode-container">
          <div id="canvas">
-            <div>
-               <button class="btn">Download</button>
-               <select name="download" id="download" class="btn">
-                  <option value="png" selected>PNG</option>
-                  <option value="jpg">JPG</option>
-                  <option value="svg">SVG</option>
-               </select>
-            </div>
+         </div>
+         <div>
+            <button class="btn" id="downloadBtn">Download</button>
+            <select name="downloadFormat" id="downloadFormat" class="btn">
+               <option value="png" selected>PNG</option>
+               <option value="jpg">JPG</option>
+               <option value="svg">SVG</option>
+               <option value="webp">WEBP</option>
+            </select>
          </div>
       </div>
 

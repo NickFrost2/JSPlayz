@@ -4,6 +4,16 @@ const heads = document.querySelectorAll('.editor-head');
 const imageInput = document.getElementById('user-image');
 const preferWidth = document.getElementById('width');
 const preferHeight = document.getElementById('height');
+const downloadBtn = document.getElementById('downloadBtn');
+const downloadFormat = document.getElementById('downloadFormat');
+const dotStyle = document.getElementById('dot-style');
+const dotColor = document.getElementById('dot-color');
+
+dotColor.addEventListener('input', () => qrCode.update({
+   dotsOptions: {
+      color: dotColor.value,
+   }
+}));
 
 let selectedImage = null;
 let selectedImageDataUrl = null;
@@ -27,7 +37,7 @@ const qrCode = new QRCodeStyling({
    image: selectedImageDataUrl,
    dotsOptions: {
       color: "#001014",
-      type: "classy",
+      type: dotStyle.value,
    },
    backgroundOptions: {
       color: "#ffffff",
@@ -43,6 +53,13 @@ const qrCode = new QRCodeStyling({
    }
 });
 qrCode.append(canvas);
+
+dotStyle.addEventListener('input', () => qrCode.update({
+   dotsOptions: {
+      type: dotStyle.value,
+   }
+}));
+
 
 userInput.addEventListener('input', () => qrCode.update({
    data: userInput.value,
@@ -66,6 +83,11 @@ document.getElementById('remove-image').addEventListener('click', () => {
    qrCode.update({
       image: selectedImageDataUrl
    });
+})
+
+downloadBtn.addEventListener('click', () => {
+   const format = downloadFormat.value;
+   qrCode.download({ name: `QR Code Generator ${Math.floor(Math.random() * 10) + 1}`, extension: format });
 })
 
 
