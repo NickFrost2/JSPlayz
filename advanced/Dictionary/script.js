@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const bookmarkBtn = document.getElementById('favoriteBtn');
    const pronunciationAudio = document.getElementById('pronunciationAudio');
    const bookmarkFolder = document.querySelector('.bookmarkFolder');
+   const toggleTheme = document.getElementById('toggle-theme');
 
    // *Event listeners
    document.addEventListener('click', (event) => {
@@ -33,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
          searchBtn.click();
       }
    });
+
+   toggleTheme.addEventListener('click', themeToggler);
 
    bookmarkFolder.addEventListener('click', showBookmarks);
 
@@ -270,6 +273,27 @@ document.addEventListener('DOMContentLoaded', () => {
       // }
    }
 
+   function themeToggler() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      const newIcon = currentTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+
+      html.setAttribute('data-theme', newTheme);
+      toggleTheme.innerHTML = newIcon;
+      localStorage.setItem('theme', newTheme);
+   }
+
+   function theme() {
+      const html = document.documentElement;
+      const userTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+      const userIcon = userTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      html.setAttribute('data-theme', userTheme);
+      toggleTheme.innerHTML = userIcon;
+   }
+
    // *Classes
    class DefinitionRenderer {
       constructor(containerId) {
@@ -351,4 +375,5 @@ document.addEventListener('DOMContentLoaded', () => {
    }
 
    initializeApp();
+   theme();
 });

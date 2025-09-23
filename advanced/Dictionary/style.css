@@ -7,6 +7,23 @@
    --accent-color: #0ea5e9;
 }
 
+[data-theme="dark"] {
+   --white-color: #000000dc;
+   --black-color: #ffffff;
+   --gray: #d1cdcd;
+
+   .bookmarkFolder,
+   #toggle-theme {
+      color: var(--primary-color);
+   }
+
+   .loader {
+      background: var(--white-color);
+   }
+
+}
+
+
 * {
    margin: 0;
    padding: 0;
@@ -16,15 +33,13 @@
 
 body {
    min-height: 100vh;
-   padding: 20px;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+   background: var(--white-color);
 }
 
-nav,
-.bookmarkFolder {
-   width: 3rem;
-   height: 3rem;
+.bookmarkFolder,
+#toggle-theme {
+   width: 2.5rem;
    background: var(--secondary-color);
    margin: 10px;
    border-radius: 100%;
@@ -33,7 +48,7 @@ nav,
    justify-content: center;
    align-items: center;
    color: var(--white-color);
-   font-size: 1.5rem;
+   font-size: 1.2rem;
    cursor: pointer;
    padding: 10px;
    position: absolute;
@@ -49,18 +64,24 @@ nav,
    }
 }
 
+#toggle-theme {
+   position: fixed;
+   top: unset;
+   bottom: 0;
+}
+
 .container {
-   max-width: 900px;
+   max-width: 90%;
    margin: 0 auto;
-   background: var(--white-color);
+   /* background: var(--white-color); */
    border-radius: 20px;
-   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+   /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); */
    overflow: hidden;
 }
 
 .header {
    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
-   padding: 30px;
+   padding: 50px;
    text-align: center;
    color: var(--white-color);
 }
@@ -87,13 +108,14 @@ nav,
 #searchInput {
    width: 100%;
    padding: 15px 20px;
-   border: 2px solid #e9ecef;
+   border: 2px solid var(--primary-color);
    border-radius: 50px;
    font-size: 1.1rem;
    outline: none;
+   background: var(--white-color);
+   color: var(--black-color);
 
    &:focus {
-      border-color: var(--primary-color);
       box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
    }
 }
@@ -334,7 +356,7 @@ nav,
 }
 
 .error-message {
-   background: #ffebee;
+   background: var(--white-color);
    border: 1px solid #f44336;
    color: #c62828;
    padding: 20px;
@@ -424,7 +446,7 @@ nav,
       text-align: start;
       width: 100%;
       cursor: pointer;
-      color: var(--white-color);
+      color: #ffffff;
       text-transform: capitalize;
       font-size: 1.2rem;
       font-weight: 500;
@@ -446,7 +468,7 @@ nav,
    position: fixed;
 }
 
-.bookmarkFolder:hover~.sidebar {
+.bookmarkFolder:hover ~ .sidebar {
    width: fit-content;
 }
 
