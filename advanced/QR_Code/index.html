@@ -36,9 +36,9 @@
 
                <label for="width">Width:</label>
                <div class="size-control">
-                  <input type="number" name="width" id="width" value="300">
+                  <input type="number" name="width" id="width" value="2000">
                   <label for="height">Height:</label>
-                  <input type="number" name="height" id="height" value="300">
+                  <input type="number" name="height" id="height" value="2000">
                </div>
             </div>
          </div>
@@ -46,31 +46,95 @@
          <div>
             <h4 class="editor-head" data-target="dot-option">Dots Options</h4>
             <div class="editor-container" id="dot-option">
-               <label for="user-input">Dot Style</label>
+               <label>Dot Style</label>
                <select name="dot-style" id="dot-style">
                   <option value="square" selected>Square</option>
                   <option value="rounded">Rounded</option>
                   <option value="classy">Classy</option>
-                  <option value="dots">pointillism</option>
+                  <option value="dots">Pointillism</option>
                   <option value="classy-rounded">Classy & Rounded</option>
                   <option value="extra-rounded">Extra Rounded</option>
                </select>
 
-               <label for="dot-color">Dot color</label>
-               <input type="color" value="#000000" id="dot-color">
+               <label>Color Type</label>
+               <select name="dotColorType" id="dotColorType">
+                  <option value="dotSingle" selected>Single color</option>
+                  <option value="dotGradient">Gradient color</option>
+               </select>
 
-               <!-- <label>Color Variant</label>
-               <div class="img-control">
-                  <input type="file" name="image" id="user-image" accept="image/*">
-                  <button class="btn end" id="remove-image">Remove Image</button>
+               <div id="dotSingleColorContainer" class="contents">
+                  <label for="dotSingleColor">Dot color</label>
+                  <input type="color" value="#000000" id="dotSingleColor">
                </div>
 
-               <label for="width">Width:</label>
-               <div class="size-control">
-                  <input type="number" name="width" id="width" value="300">
-                  <label for="height">Height:</label>
-                  <input type="number" name="height" id="height" value="300">
-               </div> -->
+               <div class="contents hidden" id="dotGradientColorContainer" data-option="dotsOptions">
+                  <label>Gradient Type</label>
+                  <div class="img-control">
+                     <label>
+                        <input type="radio" name="dotGradientType" value="linear" checked>
+                        Linear
+                     </label>
+                     <label>
+                        <input type="radio" name="dotGradientType" value="radial">
+                        Radial
+                     </label>
+                  </div>
+                  <label for="gradient-color">Dot gradient</label>
+                  <div>
+                     <input type="color" value="#000000" id="dotFromGradientColor">
+                     <input type="color" value="#000000" id="dotToGradientColor">
+                  </div>
+                  <label>Rotation</label>
+                  <input type="number" name="dotRotation" id="dotRotation" value="0" max="360">
+               </div>
+            </div>
+         </div>
+
+         <div>
+            <h4 class="editor-head" data-target="cornerSquare-option">Corners Square Options</h4>
+            <div class="editor-container" id="cornerSquare-option">
+               <label>Style</label>
+               <select name="cornerSquare-style" id="cornerSquare-style">
+                  <option selected>None</option>
+                  <option value="square">Square</option>
+                  <option value="rounded">Rounded</option>
+                  <option value="classy">Classy</option>
+                  <option value="dots">Pointillism</option>
+                  <option value="classy-rounded">Classy & Rounded</option>
+                  <option value="extra-rounded">Extra Rounded</option>
+               </select>
+         
+               <label>Color Type</label>
+               <select name="cornerSquareColorType" id="cornerSquareColorType">
+                  <option value="cornerSquareSingle" selected>Single color</option>
+                  <option value="cornerSquareGradient">Gradient color</option>
+               </select>
+         
+               <div id="cornerSquareSingleColorContainer" class="contents">
+                  <label for="cornerSquareSingleColor">Color</label>
+                  <input type="color" value="#000000" id="cornerSquareSingleColor">
+               </div>
+         
+               <div class="contents hidden" id="cornerSquareGradientColorContainer" data-option="cornersSquareOptions">
+                  <label>Gradient Type</label>
+                  <div class="img-control">
+                     <label>
+                        <input type="radio" name="cornerSquareGradientType" value="linear" checked>
+                        Linear
+                     </label>
+                     <label>
+                        <input type="radio" name="cornerSquareGradientType" value="radial">
+                        Radial
+                     </label>
+                  </div>
+                  <label>Dot gradient</label>
+                  <div>
+                     <input type="color" value="#000000" id="cornerSquareFromGradientColor">
+                     <input type="color" value="#000000" id="cornerSquareToGradientColor">
+                  </div>
+                  <label>Rotation</label>
+                  <input type="number" name="cornerSquareRotation" id="cornerSquareRotation" value="0" max="360">
+               </div>
             </div>
          </div>
       </div>

@@ -11,7 +11,7 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   transition: all 0.3s ease;
+   /* transition: all 0.3s ease; */
 }
 
 body {
@@ -135,6 +135,7 @@ input[type='color'] {
    padding: 0;
 }
 
+
 .img-control {
    display: flex;
    justify-content: space-between;
@@ -195,6 +196,10 @@ option {
 }
 
 /* Utility classes for JavaScript */
+.contents {
+   display: contents;
+}
+
 .hidden {
    display: none;
 }
