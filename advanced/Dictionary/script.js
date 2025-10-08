@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const bookmarkBtn = document.getElementById('favoriteBtn');
    const pronunciationAudio = document.getElementById('pronunciationAudio');
    const bookmarkFolder = document.querySelector('.bookmarkFolder');
-   const toggleTheme = document.getElementById('toggle-theme');
+   const toggleTheme = document.getElementById('toggle-theme')
 
    // *Event listeners
    document.addEventListener('click', (event) => {
@@ -67,11 +67,29 @@ document.addEventListener('DOMContentLoaded', () => {
       Dictionary(word);
    });
 
-   pronunciationBtn.addEventListener('click', () => {
-      if (pronunciationAudio.src) pronunciationAudio.play();
-   });
+   pronunciationBtn.addEventListener('click', pronunce);
 
    // *Functions
+   function pronunce() {
+      const word = wordDisplay.textContent;
+      if ('speechSynthesis' in window) {
+         const speech = new SpeechSynthesisUtterance();
+         speech.text = word;
+         speech.volume = 1;    // 0 to 1
+         speech.rate = 1;      // 0.1 to 10
+         speech.pitch = 1;     // 0 to 2
+         speech.lang = 'en-US';
+
+         window.speechSynthesis.speak(speech);
+         return;
+      }
+      if (pronunciationAudio.src) {
+         pronunciationAudio.play();
+         console.log('i speak with the API')
+         return
+      };
+   };
+   
    function errorDisplay(h3 = `Word not found`, p = `Sorry, we couldn't find that word. Please check your spelling and try again.`) {
       errorMessage.innerHTML = `<h3>${h3}</h3>
                                  <p>${p}<p>`;
@@ -184,7 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             else {
                phoneticDisplay.classList.add('hidden');
-               pronunciationBtn.classList.add('hidden');
+               if (!('speechSynthesis' in window)) {
+                  pronunciationBtn.classList.add('hidden');
+               }
             }
 
             //& Section that gets all Definition
