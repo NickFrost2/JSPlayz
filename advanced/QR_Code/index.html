@@ -95,26 +95,23 @@
             <div class="editor-container" id="cornerSquare-option">
                <label>Style</label>
                <select name="cornerSquare-style" id="cornerSquare-style">
-                  <option selected>None</option>
+                  <option value="none">None</option>
                   <option value="square">Square</option>
                   <option value="rounded">Rounded</option>
-                  <option value="classy">Classy</option>
-                  <option value="dots">Pointillism</option>
-                  <option value="classy-rounded">Classy & Rounded</option>
                   <option value="extra-rounded">Extra Rounded</option>
                </select>
-         
+
                <label>Color Type</label>
                <select name="cornerSquareColorType" id="cornerSquareColorType">
                   <option value="cornerSquareSingle" selected>Single color</option>
                   <option value="cornerSquareGradient">Gradient color</option>
                </select>
-         
+
                <div id="cornerSquareSingleColorContainer" class="contents">
                   <label for="cornerSquareSingleColor">Color</label>
                   <input type="color" value="#000000" id="cornerSquareSingleColor">
                </div>
-         
+
                <div class="contents hidden" id="cornerSquareGradientColorContainer" data-option="cornersSquareOptions">
                   <label>Gradient Type</label>
                   <div class="img-control">
@@ -134,6 +131,87 @@
                   </div>
                   <label>Rotation</label>
                   <input type="number" name="cornerSquareRotation" id="cornerSquareRotation" value="0" max="360">
+               </div>
+            </div>
+         </div>
+
+         <div>
+            <h4 class="editor-head" data-target="cornerDot-option">Corner Dot Options</h4>
+            <div class="editor-container" id="cornerDot-option">
+               <label>Style</label>
+               <select name="cornerDot-style" id="cornerDotStyle">
+                  <option value="none">None</option>
+                  <option value="square">Square</option>
+                  <option value="rounded">Rounded</option>
+               </select>
+
+               <label>Color Type</label>
+               <select name="cornerDotColorType" id="cornerDotColorType">
+                  <option value="cornerDotSingle" selected>Single color</option>
+                  <option value="cornerDotGradient">Gradient color</option>
+               </select>
+
+               <div id="cornerDotSingleColorContainer" class="contents">
+                  <label for="cornerDotSingleColor">Color</label>
+                  <input type="color" value="#000000" id="cornerDotSingleColor">
+               </div>
+
+               <div class="contents hidden" id="cornerDotGradientColorContainer" data-option="cornersDotOptions">
+                  <label>Gradient Type</label>
+                  <div class="img-control">
+                     <label>
+                        <input type="radio" name="cornerDotGradientType" value="linear" checked>
+                        Linear
+                     </label>
+                     <label>
+                        <input type="radio" name="cornerDotGradientType" value="radial">
+                        Radial
+                     </label>
+                  </div>
+                  <label>Dot gradient</label>
+                  <div>
+                     <input type="color" value="#000000" id="cornerDotFromGradientColor">
+                     <input type="color" value="#000000" id="cornerDotToGradientColor">
+                  </div>
+                  <label>Rotation</label>
+                  <input type="number" name="cornerDotRotation" id="cornerDotRotation" value="0" max="360">
+               </div>
+            </div>
+         </div>
+
+         <div>
+            <h4 class="editor-head" data-target="background-option">Background Options</h4>
+            <div class="editor-container" id="background-option">
+               <label>Color Type</label>
+               <select name="backgroundColorType" id="backgroundColorType">
+                  <option value="backgroundSingle" selected>Single color</option>
+                  <option value="backgroundGradient">Gradient color</option>
+               </select>
+
+               <div id="backgroundSingleColorContainer" class="contents">
+                  <label for="backgroundSingleColor">Color</label>
+                  <input type="color" value="#ffffff" id="backgroundSingleColor">
+               </div>
+
+               <div class="contents hidden" id="backgroundGradientColorContainer" data-option="backgroundOptions">
+                  <label>Gradient Type</label>
+                  <div class="img-control">
+                     <label>
+                        <input type="radio" name="backgroundGradientType" value="linear" checked>
+                        Linear
+                     </label>
+                     <label>
+                        <input type="radio" name="backgroundGradientType" value="radial">
+                        Radial
+                     </label>
+                  </div>
+                  <label>Dot gradient</label>
+                  <div>
+                     <input type="color" value="#ffffff" id="backgroundFromGradientColor">
+                     <input type="color" value="#ffffff" id="backgroundToGradientColor">
+                  </div>
+                  <label>Rotation</label>
+                  <input type="number" name="backgroundRotation" id="backgroundRotation" value="0" max="360">
                </div>
             </div>
          </div>

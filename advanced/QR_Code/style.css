@@ -76,6 +76,7 @@ nav,
    position: relative;
    flex-wrap: wrap;
    row-gap: 20px;
+   align-items: flex-start;
    /* border: 2px solid red; */
 }
 
@@ -160,7 +161,7 @@ input[type='color'] {
 .qrcode-container {
    flex: 1;
    position: sticky;
-   top: 10%;
+   top: 10px;
    /* border: 2px solid red; */
    display: flex;
    align-items: center;

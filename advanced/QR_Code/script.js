@@ -12,13 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
    const dotStyle = document.getElementById('dot-style');
    const dotSingleColor = document.getElementById('dotSingleColor');
 
-   const cornerSquareStyle = document.getElementById('cornerSquare-option');
+   const cornerSquareStyle = document.getElementById('cornerSquare-style');
    const cornerSquareSingleColor = document.getElementById('cornerSquareSingleColor');
+
+   const cornerDotStyle = document.getElementById('cornerDotStyle');
+   const cornerDotSingleColor = document.getElementById('cornerDotSingleColor');
+
+   const backgroundStyle = document.getElementById('backgroundStyle');
+   const backgroundSingleColor = document.getElementById('backgroundSingleColor');
 
    dotSingleColor.addEventListener('input', () => {
       qrCode.update({
          dotsOptions: {
-            // color: dotSingleColor.value,
             gradient: {
                type: "linear",
                rotation: 0,
@@ -51,30 +56,63 @@ document.addEventListener('DOMContentLoaded', () => {
       })
    })
 
+   cornerDotSingleColor.addEventListener('input', () => {
+      qrCode.update({
+         cornersDotOptions: {
+            gradient: {
+               type: "linear",
+               rotation: 0,
+               colorStops: [
+                  {
+                     offset: 0, color: cornerDotSingleColor.value,
+                  },
+                  { offset: 1, color: cornerDotSingleColor.value, }
+               ]
+            }
+         }
+      })
+   })
+
+   backgroundSingleColor.addEventListener('input', () => {
+      qrCode.update({
+         backgroundOptions: {
+            gradient: {
+               type: "linear",
+               rotation: 0,
+               colorStops: [
+                  {
+                     offset: 0, color: backgroundSingleColor.value,
+                  },
+                  { offset: 1, color: backgroundSingleColor.value, }
+               ]
+            }
+         }
+      })
+   })
+
    const dotColorType = document.getElementById('dotColorType');
    dotColorType.addEventListener('change', () => toggle("dot"));
 
    const cornerSquareColorType = document.getElementById('cornerSquareColorType');
    cornerSquareColorType.addEventListener('change', () => toggle("cornerSquare"));
 
-   let selectedImageDataUrl = null;
+   const cornerDotColorType = document.getElementById('cornerDotColorType');
+   cornerDotColorType.addEventListener('change', () => toggle("cornerDot"));
 
-   heads.forEach(head => {
-      head.addEventListener('click', () => {
-         const targetId = head.getAttribute('data-target');
-         const targetDiv = document.getElementById(targetId);
-
-         if (targetDiv) {
-            targetDiv.classList.toggle('hidden');
-         }
-      });
-   });
+   const backgroundColorType = document.getElementById('backgroundColorType');
+   backgroundColorType.addEventListener('change', () => toggle("background"));
 
    const dotGradientColorContainer = document.getElementById('dotGradientColorContainer');
    const dotGradientColorInput = dotGradientColorContainer.querySelectorAll('input');
 
    const cornerSquareGradientColorContainer = document.getElementById('cornerSquareGradientColorContainer');
    const cornerSquareGradientColorInput = cornerSquareGradientColorContainer.querySelectorAll('input');
+
+   const cornerDotGradientColorContainer = document.getElementById('cornerDotGradientColorContainer');
+   const cornerDotGradientColorInput = cornerDotGradientColorContainer.querySelectorAll('input');
+
+   const backgroundGradientColorContainer = document.getElementById('backgroundGradientColorContainer');
+   const backgroundGradientColorInput = backgroundGradientColorContainer.querySelectorAll('input');
 
    dotGradientColorInput.forEach(input => {
       input.addEventListener('input', () => {
@@ -88,6 +126,29 @@ document.addEventListener('DOMContentLoaded', () => {
       })
    })
 
+   cornerDotGradientColorInput.forEach(input => {
+      input.addEventListener('input', () => {
+         generateGradient('cornerDot')
+      })
+   })
+
+   backgroundGradientColorInput.forEach(input => {
+      input.addEventListener('input', () => {
+         generateGradient('background')
+      })
+   })
+
+   let selectedImageDataUrl = null;
+   heads.forEach(head => {
+      head.addEventListener('click', () => {
+         const targetId = head.getAttribute('data-target');
+         const targetDiv = document.getElementById(targetId);
+
+         if (targetDiv) {
+            targetDiv.classList.toggle('hidden');
+         }
+      });
+   });
    function generateGradient(mode) {
       const container = document.getElementById(`${mode}GradientColorContainer`);
       const selectedMode = container.querySelector(`input[name="${mode}GradientType"]:checked`).value;
@@ -138,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
       height: preferHeight.value,
       type: "canvas",
       data: userInput.value,
+      margin: 50,
       image: selectedImageDataUrl,
       dotsOptions: {
          type: dotStyle.value,
@@ -170,14 +232,14 @@ document.addEventListener('DOMContentLoaded', () => {
          crossOrigin: "anonymous",
          margin: 20,
          hideBackgroundDots: true,
-         imageSize: 0.5,
+         imageSize: 0.25,
       },
       qrOptions: {
          typeNumber: 0,
          errorCorrectionLevel: 'Q'
       },
       cornersSquareOptions: {
-         type: 'classy-rounded',
+         // type: undefined,
          gradient: {
             type: "linear",
             rotation: 0,
@@ -189,8 +251,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
          },
          cornersDotOptions: {
-            // type: "none",
-            color: "#ff0000ff",
+            // type: undefined,
+            // color: "#ff0000ff",
             // gradient: {
             //    type: "radial",
             //    rotation: 0,
@@ -213,12 +275,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
    }));
 
-   cornerSquareStyle.addEventListener('input', () => qrCode.update({
-      cornersSquareOptions: {
-         type: cornerSquareStyle.value,
+   cornerSquareStyle.addEventListener('input', function cornerSquareStyleUpdate() {
+      let style;
+      if (cornerSquareStyle.value === 'none') {
+         style = undefined;
       }
-   }));
 
+      else {
+         style = cornerSquareStyle.value;
+      }
+      qrCode.update({
+         cornersSquareOptions: {
+            type: style,
+         }
+      })
+   });
+
+   cornerDotStyle.addEventListener('input', function cornerDotStyleUpdate() {
+      let style;
+      if (cornerDotStyle.value === 'none') {
+         style = undefined;
+      }
+
+      else {
+         style = cornerDotStyle.value;
+      }
+      qrCode.update({
+         cornersDotOptions: {
+            type: style,
+         }
+      })
+   });
 
    userInput.addEventListener('input', () => qrCode.update({
       data: userInput.value,
